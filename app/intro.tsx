@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { ChevronRight, ChevronsLeftRightIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Intro() {
   return (
     <>
       <div className="flex flex-row">
         <div className=" flex flex-col w-1/2 justify-center">
-          {/* <p className=" font-black text-6xl mb-2"></p> */}
           <div className="mb-4">
             <TextAnimate
               animation="blurIn"
@@ -44,11 +44,11 @@ export default function Intro() {
             as="p"
             className="w-4/5 tracking-wide"
           >
-            RenderWorkshop enhances Blender's rendering capabilities by
-            leveraging multiple devices to render single-frame images or image
-            sequences, significantly accelerating the process. This tool is
-            ideal for middle/small studios, companies, and personal networks
-            with multiple devices.
+            A versatile rendering system designed for Blender, offering both
+            distributed, remote, and local rendering capabilities. Powerful yet
+            user-friendly, ensuring high rendering stability and employing
+            various measures to safeguard your render files, providing reliable
+            protection for your rendering tasks.
           </TextAnimate>
           <BlurFade delay={0.1} inView>
             <div className="flex space-x-10">
@@ -61,15 +61,13 @@ export default function Intro() {
                   <ChevronRight />
                 </Button>
               </Link>
-              <Link
-                href={"https://blendermarket.com/products/renderworkshop/docs"}
-              >
+              <Link href={"https://blendermarket.com/creators/purplefire"}>
                 <Button
                   className="font-semibold mt-5 shadow-none border-blender_blue tracking-wide hover:bg-blender_blue hover:text-white"
                   variant="outline"
                   size={"lg"}
                 >
-                  How to use
+                  Creator Page
                 </Button>
               </Link>
             </div>
@@ -79,10 +77,12 @@ export default function Intro() {
           <div className="grid grid-cols-2 gap-8">
             <BlurFade delay={0.25 * 2} inView>
               <div className="rounded-md aspect-square flex flex-col justify-center items-center">
-                <img
+                <Image
                   src="/img/manager-Rendering.png"
                   alt=""
                   className="rounded-md shadow-md"
+                  width={300}
+                  height={500}
                 />
                 <p className="font-light text-xs opacity-60 mt-2">
                   manager-Rendering
@@ -91,10 +91,12 @@ export default function Intro() {
             </BlurFade>
             <BlurFade delay={0.25 * 3} inView>
               <div className="rounded-md aspect-square flex flex-col justify-center items-center">
-                <img
+                <Image
                   src="/img/manager-Idling.png"
                   alt=""
                   className="rounded-md shadow-md"
+                  width={300}
+                  height={500}
                 />
                 <p className="font-light text-xs opacity-60 mt-2">
                   manager-Idling
@@ -103,10 +105,12 @@ export default function Intro() {
             </BlurFade>
             <BlurFade delay={0.25 * 4} inView>
               <div className="rounded-md  flex flex-col justify-center items-center">
-                <img
+                <Image
                   src="/img/worker_home.png"
                   alt=""
                   className="rounded-md shadow-md"
+                  width={300}
+                  height={500}
                 />
                 <p className="font-light text-xs opacity-60 mt-2">
                   worker-HomePage
@@ -115,10 +119,12 @@ export default function Intro() {
             </BlurFade>
             <BlurFade delay={0.25 * 5} inView>
               <div className="rounded-md  flex flex-col justify-center items-center">
-                <img
+                <Image
                   src="/img/worker_setting.png"
                   alt=""
                   className="rounded-md shadow-md"
+                  width={300}
+                  height={500}
                 />
                 <p className="font-light text-xs opacity-60 mt-2">
                   worker-SettingPage

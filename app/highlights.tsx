@@ -1,8 +1,6 @@
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { TextAnimate } from "@/components/ui/text-animate";
 import {
-  CableIcon,
-  CheckSquareIcon,
   CloudOffIcon,
   CpuIcon,
   FileScanIcon,
@@ -10,9 +8,7 @@ import {
   ImagesIcon,
   LanguagesIcon,
   ListTodoIcon,
-  MicrochipIcon,
   NetworkIcon,
-  ScrollTextIcon,
   SmileIcon,
 } from "lucide-react";
 import { JSX, SVGProps } from "react";

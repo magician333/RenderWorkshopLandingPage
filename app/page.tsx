@@ -7,6 +7,7 @@ import VideoPlayer from "./videoplay";
 import Footer from "./footer";
 import Doc from "./document";
 import Service from "./service";
+import Log from "./log";
 
 export default function Home() {
   return (
@@ -19,10 +20,10 @@ export default function Home() {
                 Home
               </TabsTrigger>
               <TabsTrigger value="document" className=" tracking-wide">
-                Doc
+                Document
               </TabsTrigger>
-              <TabsTrigger value="about" className=" tracking-wide">
-                About
+              <TabsTrigger value="log" className=" tracking-wide">
+                Change log
               </TabsTrigger>
             </TabsList>
             <TabsContent value="home">
@@ -35,6 +36,9 @@ export default function Home() {
             </TabsContent>
             <TabsContent value="document">
               <Doc />
+            </TabsContent>
+            <TabsContent value="log">
+              <Log />
             </TabsContent>
           </Tabs>
 
