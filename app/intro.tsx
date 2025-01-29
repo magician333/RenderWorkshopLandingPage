@@ -15,7 +15,7 @@ export default function Intro() {
               animation="blurIn"
               by="line"
               as="p"
-              className="font-black text-8xl -mb-8 -z-80 text-blender_orange"
+              className="font-black text-8xl -mb-8 z-10 text-blender_orange"
             >
               Render
             </TextAnimate>
@@ -23,7 +23,7 @@ export default function Intro() {
               animation="blurIn"
               by="line"
               as="p"
-              className="font-black text-8xl  pl-11 -z-20 text-blender_blue"
+              className="font-black text-8xl  pl-11  text-blender_blue"
             >
               Workshop
             </TextAnimate>

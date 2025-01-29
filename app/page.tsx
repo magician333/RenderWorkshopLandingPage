@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import VideoPlayer from "./videoplay";
 import Footer from "./footer";
-import Doc from "./document";
+import Doc from "./doc";
 import Service from "./service";
 import Log from "./log";
 

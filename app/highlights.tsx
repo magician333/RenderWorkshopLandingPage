@@ -1,4 +1,3 @@
-import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { TextAnimate } from "@/components/ui/text-animate";
 import {
   CloudOffIcon,
@@ -147,12 +146,20 @@ export default function Highlights() {
             Highlights of RenderWorkshop
           </TextAnimate>
         </div>
-
-        <BentoGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {features.map((feature, idx) => (
-            <BentoCard key={idx} {...feature} />
-          ))}
-        </BentoGrid>
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {features.map((item) => (
+              <div
+                className="w-72 p-5 border shadow rounded-md flex flex-col justify-start hover:shadow-md"
+                key={item.name}
+              >
+                <item.Icon className="mb-2 mt-6 size-10 " />
+                <p className="font-bold text-lg">{item.name}</p>
+                <p className="text-sm tracking-tight">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
