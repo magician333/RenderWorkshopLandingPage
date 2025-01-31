@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Intro() {
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row max-h-full">
         <div className=" flex flex-col w-1/2 justify-center">
           <div className="mb-4">
             <TextAnimate

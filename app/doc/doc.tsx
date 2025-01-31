@@ -1,7 +1,8 @@
-import { getMarkdownContent } from "./utils";
+import FAQ from "./faq";
+import { getMarkdownContent } from "../utils";
 
-export default async function Log() {
-  const { content, data } = await getMarkdownContent("log.md");
+export default async function Doc() {
+  const { content, data } = await getMarkdownContent("document.md");
   console.log(data);
 
   return (
@@ -10,6 +11,7 @@ export default async function Log() {
         <div className="border rounded-lg shadow-md p-8 prose">
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
+        <FAQ />
       </div>
     </>
   );

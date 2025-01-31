@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import VideoPlayer from "./videoplay";
 import Footer from "./footer";
-import Doc from "./doc";
+import Doc from "./doc/doc";
 import Service from "./service";
-import Log from "./log";
+import Log from "./log/log";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="home">
-              <div className="pt-10 space-y-28">
+              <div className="pt-10 space-y-32">
                 <Intro />
                 <Highlights />
                 <VideoPlayer />

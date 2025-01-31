@@ -4,11 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getMarkdownContent } from "./utils";
 
-export default async function Doc() {
-  const { content, data } = await getMarkdownContent("document.md");
-  console.log(data);
+export default function FAQ() {
   const faqData = [
     {
       value: "item-1",
@@ -77,11 +74,7 @@ export default async function Doc() {
   ];
   return (
     <>
-      <div className="flex flex-col justify-center items-center bg-white bg-opacity-70">
-        <div className="border rounded-lg shadow-md p-8 prose">
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </div>
-
+      <div>
         <div className="mt-10 w-3/4 mx-auto">
           <h1 className="text-4xl font-semibold mb-6">RenderWorkshop FAQ</h1>
           <Accordion type="single" collapsible className="w-full">
