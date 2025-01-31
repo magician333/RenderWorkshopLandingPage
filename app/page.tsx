@@ -7,7 +7,7 @@ import VideoPlayer from "./videoplay";
 import Footer from "./footer";
 import Doc from "./doc/doc";
 import Service from "./service";
-import Log from "./log/log";
+import Changelog from "./changelog/changelog";
 
 export default function Home() {
   return (
@@ -22,8 +22,8 @@ export default function Home() {
               <TabsTrigger value="document" className=" tracking-wide">
                 Document
               </TabsTrigger>
-              <TabsTrigger value="log" className=" tracking-wide">
-                Change log
+              <TabsTrigger value="changelog" className=" tracking-wide">
+                Changelog
               </TabsTrigger>
             </TabsList>
             <TabsContent value="home">
@@ -37,8 +37,8 @@ export default function Home() {
             <TabsContent value="document">
               <Doc />
             </TabsContent>
-            <TabsContent value="log">
-              <Log />
+            <TabsContent value="changelog">
+              <Changelog />
             </TabsContent>
           </Tabs>
 

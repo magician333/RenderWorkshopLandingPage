@@ -1,7 +1,7 @@
 import { getMarkdownContent } from "../utils";
 
-export default async function Log() {
-  const { content, data } = await getMarkdownContent("log.md");
+export default async function Changelog() {
+  const { content, data } = await getMarkdownContent("changelog.md");
   console.log(data);
 
   return (

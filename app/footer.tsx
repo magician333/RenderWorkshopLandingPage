@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <div className="bg-white w-screen pt-10 mt-10 h-96 grid grid-cols-3 pb-20">
       <div className="ml-28">
-        <Image src="/logo.svg" alt="logo" width={200} height={100} />
+        <Image src="/logo/logo.svg" alt="logo" width={200} height={100} />
         <p className="font-medium text-xs opacity-75">
           Multi-Device, Distributed, Batch Rendering System
         </p>
