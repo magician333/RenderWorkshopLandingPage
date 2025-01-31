@@ -24,8 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} overflow-x-hidden`}>
         {children}
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }
