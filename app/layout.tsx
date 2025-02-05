@@ -11,8 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  applicationName: "RenderWorkshop",
-
+  title: "RenderWorkshop",
   description:
     "A distributed rendering system meticulously designed specifically for Blender",
   keywords: [
