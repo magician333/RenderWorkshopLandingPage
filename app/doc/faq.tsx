@@ -77,9 +77,13 @@ export default function FAQ() {
       <div>
         <div className="mt-10 w-3/4 mx-auto">
           <h1 className="text-4xl font-semibold mb-6">RenderWorkshop FAQ</h1>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible>
             {faqData.map((item) => (
-              <AccordionItem key={item.value} value={item.value}>
+              <AccordionItem
+                key={item.value}
+                value={item.value}
+                className="w-full text-wrap"
+              >
                 <AccordionTrigger className="font-semibold text-sm">
                   {item.question}
                 </AccordionTrigger>

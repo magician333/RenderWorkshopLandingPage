@@ -36,131 +36,87 @@ export default function Highlights() {
       name: "Multi-Method Rendering",
       description:
         "Supports local, remote, and distributed batch rendering for flexibility.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: ImagesIcon,
       name: "Image & Anim Support",
       description:
         "Image and animation rendering of all file formats supported by Blender",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: CloudOffIcon,
       name: "Local Render Farm",
       description:
         "Queue scenes for rendering without internet, enabling private render farms.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: BlenderIcon,
       name: "Blender Deep Integration",
       description:
         "UI integration. Automatically read Blender rendering parameters without manual repeated settings.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: ListTodoIcon,
       name: "Custom Scene",
       description:
         "Support custom scenes. Multiple frames of a single scene do not need to be rendered repeatedly.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: SmileIcon,
       name: "Easy Deployment",
       description:
         "Complete deployment with a single configuration for user-friendliness.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: HeartPulseIcon,
       name: "Heartbeat Detection",
       description:
         "Tasks can still be assigned to other online workers even after the worker goes offline or broken.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
-
     {
       Icon: FileScanIcon,
       name: "File Security Detection",
       description:
         "Before rendering the MD5 file comparison. Check and re-render the miss after rendering.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: CpuIcon,
       name: "Low Resources Usage",
       description:
         "Minimal resources consumption during standby, allowing workers to wake on demand.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
     {
       Icon: LanguagesIcon,
       name: "Multi-Language Support",
       description:
         "Supports various languages with options for custom display settings.",
-      href: "#",
-      className: "col-span-5 lg:col-span-1",
-      cta: "Learn More",
-      background: "",
     },
   ];
+
   return (
-    <>
-      <div className="flex flex-col justify-center items-center">
-        <div>
-          <TextAnimate
-            animation="blurIn"
-            by="line"
-            as="p"
-            className="text-5xl font-bold mb-5 tracking-wider"
+    <div className="flex flex-col justify-center items-center">
+      <TextAnimate
+        animation="blurIn"
+        by="line"
+        as="p"
+        className="text-5xl font-bold mb-5 tracking-wider text-center"
+      >
+        Highlights of RenderWorkshop
+      </TextAnimate>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4">
+        {features.map((item) => (
+          <div
+            className="w-full p-4 border shadow rounded-md flex flex-col justify-start items-center overflow-hidden"
+            key={item.name}
           >
-            Highlights of RenderWorkshop
-          </TextAnimate>
-        </div>
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {features.map((item) => (
-              <div
-                className="w-72 p-5 border shadow rounded-md flex flex-col justify-start hover:shadow-md"
-                key={item.name}
-              >
-                <item.Icon className="mb-2 mt-6 size-10 " />
-                <p className="font-bold text-lg">{item.name}</p>
-                <p className="text-sm tracking-tight">{item.description}</p>
-              </div>
-            ))}
+            <item.Icon className="mb-2 mt-4 w-10 h-10" />
+            <p className="font-bold text-lg text-center">{item.name}</p>
+            <p className="text-sm tracking-tight text-center">
+              {item.description}
+            </p>
           </div>
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }
