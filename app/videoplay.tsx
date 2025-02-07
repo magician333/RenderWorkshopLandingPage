@@ -12,7 +12,7 @@ export default function VideoPlayer() {
             as="p"
             className="text-5xl font-bold mb-5 tracking-wider"
           >
-            Introduction video
+            Introducing Video
           </TextAnimate>
         </div>
         <HeroVideoDialog

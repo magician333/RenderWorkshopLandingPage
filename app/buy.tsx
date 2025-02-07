@@ -51,7 +51,7 @@ export default function Buy() {
             as="p"
             className="text-5xl font-bold mb-5 tracking-wider"
           >
-            Where to get it?
+            Sales Platform
           </TextAnimate>
         </div>
         <div className="flex  w-full justify-center items-center space-x-12">
@@ -81,7 +81,7 @@ export default function Buy() {
                 <p className="font-semibold">Update fee: {item.update_fee}</p>
               </div>
 
-              <Link href={item.url} className=" opacity-50">
+              <Link href={item.url} className=" ">
                 <Button className="font-semibold bg-blender_orange">
                   Get it
                   <BadgeCheck className="size-10" />

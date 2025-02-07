@@ -102,7 +102,7 @@ export default function Highlights() {
         as="p"
         className="text-5xl font-bold mb-5 tracking-wider text-center"
       >
-        Highlights
+        RenderWorkshop Features
       </TextAnimate>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4">
         {features.map((item) => (
