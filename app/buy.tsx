@@ -51,7 +51,7 @@ export default function Buy() {
             as="p"
             className="text-5xl font-bold mb-5 tracking-wider"
           >
-            Sales Platform
+            Sales Platforms
           </TextAnimate>
         </div>
         <div className="flex  w-full justify-center items-center space-x-12">
@@ -81,12 +81,13 @@ export default function Buy() {
                 <p className="font-semibold">Update fee: {item.update_fee}</p>
               </div>
 
-              <Link href={item.url} className=" ">
-                <Button className="font-semibold bg-blender_orange">
-                  Get it
-                  <BadgeCheck className="size-10" />
-                </Button>
-              </Link>
+              <Button
+                className="font-semibold bg-blender_orange"
+                disabled={item.url === "#" ? true : false}
+              >
+                <a href={item.url}>Get it</a>
+                <BadgeCheck className="size-10" />
+              </Button>
             </MagicCard>
           ))}
         </div>
