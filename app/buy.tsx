@@ -3,7 +3,6 @@ import { MagicCard } from "@/components/ui/magic-card";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Buy() {
   const market = [
