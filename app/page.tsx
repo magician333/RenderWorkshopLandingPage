@@ -8,6 +8,7 @@ import Footer from "./footer";
 import Doc from "./doc/doc";
 import Service from "./service";
 import Changelog from "./changelog/changelog";
+import Buy from "./buy";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
                 <Intro />
                 <Highlights />
                 <VideoPlayer />
+                <Buy />
                 <Service />
               </div>
             </TabsContent>

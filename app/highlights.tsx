@@ -1,3 +1,4 @@
+import { MagicCard } from "@/components/ui/magic-card";
 import { TextAnimate } from "@/components/ui/text-animate";
 import {
   CloudOffIcon,
@@ -59,7 +60,7 @@ export default function Highlights() {
       Icon: ListTodoIcon,
       name: "Custom Scene",
       description:
-        "Support custom scenes. Multiple frames of a single scene do not need to be rendered repeatedly.",
+        "Multiple frames of a single scene do not need to be rendered repeatedly.",
     },
     {
       Icon: SmileIcon,
@@ -101,20 +102,23 @@ export default function Highlights() {
         as="p"
         className="text-5xl font-bold mb-5 tracking-wider text-center"
       >
-        Highlights of RenderWorkshop
+        Highlights
       </TextAnimate>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4">
         {features.map((item) => (
-          <div
-            className="w-full p-4 border shadow rounded-md flex flex-col justify-start items-center overflow-hidden"
+          <MagicCard
             key={item.name}
+            className="cursor-pointer whitespace-nowrap h-64 w-64 flex flex-col justify-center items-center content-center overflow-hidden"
+            gradientColor="#D9D9D955"
           >
-            <item.Icon className="mb-2 mt-4 w-10 h-10" />
-            <p className="font-bold text-lg text-center">{item.name}</p>
-            <p className="text-sm tracking-tight text-center">
-              {item.description}
-            </p>
-          </div>
+            <center>
+              <item.Icon className="mb-2 mt-4 w-10 h-10" />
+              <p className="font-bold text-lg text-center">{item.name}</p>
+              <p className="text-sm tracking-tight text-center text-wrap">
+                {item.description}
+              </p>
+            </center>
+          </MagicCard>
         ))}
       </div>
     </div>
