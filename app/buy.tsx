@@ -28,17 +28,6 @@ export default function Buy() {
       icon: "gumroad.png",
       recommend: false,
     },
-    {
-      name: "Bilibili",
-      url: "#",
-      price: "￥1??",
-      service: "Long-term support",
-      update_fee: "Free",
-      func: "All features",
-      status: "Comming Soon",
-      icon: "bilibili.png",
-      recommend: false,
-    },
   ];
   return (
     <>
