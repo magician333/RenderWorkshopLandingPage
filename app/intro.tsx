@@ -81,7 +81,7 @@ export default function Intro() {
               "worker-homepage",
               "worker-settingpage",
             ].map((item, index) => (
-              <BlurFade key={index} delay={0.25 * (index + 2)} inView>
+              <BlurFade key={index} delay={0.12 * (index + 2)} inView>
                 <div className="rounded-md aspect-square flex flex-col justify-center items-center">
                   <Image
                     src={`/img/${item}.png`}

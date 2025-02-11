@@ -39,7 +39,7 @@ export default function Buy() {
             as="p"
             className="text-5xl font-bold mb-5 tracking-wider"
           >
-            Sales Platforms
+            Where to Buy
           </TextAnimate>
         </div>
         <div className="flex  w-full justify-center items-center space-x-12">
