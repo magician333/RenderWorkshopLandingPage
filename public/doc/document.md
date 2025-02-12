@@ -1,5 +1,9 @@
 # Preparation Before Use
 
+![RenderWorkshop System](/doc/renderworkshop_system.png)
+
+> RenderWorkshop Architecture System
+
 #### 1. Shared Storage Space
 
 Ensure you have a shared storage space (e.g., `//192.168.0.10/render`) accessible by all computers.
@@ -32,7 +36,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 4. **Restart Worker:** Restart the Worker. On the first launch, it will automatically detect the Cycles rendering devices and GPU backend set in Blender (this may take several seconds).
 5. **Network Permissions:** If prompted for network access permissions for the Worker, allow it.
 6. **Configuration Success:** If the Worker homepage displays all parameters correctly, the configuration is successful.
-![worker-setting](/img/worker_setting.png)
+   ![worker-setting](/img/worker-settingpage.png)
 
 # Manager Usage Instructions
 
@@ -58,7 +62,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 18. **Heartbeat Detection (Optional):** During rendering, heartbeat detection is performed on the Worker.
 19. **Cancel Rendering (Optional):** Click the Cancel button to cancel rendering.
 20. **Message List Operations (Optional):** Expand/collapse the message list or clear it as needed.
-![Manager_Idling](/img/manager-Idling.png)
+    ![Manager_Idling](/img/manager-Idling.png)
 
 # Appendix
 
