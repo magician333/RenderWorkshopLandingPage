@@ -16,7 +16,7 @@ export default function VideoPlayer() {
           </TextAnimate>
         </div>
         <HeroVideoDialog
-          className="dark:hidden block"
+          className="dark:hidden block rounded-2xl"
           animationStyle="from-center"
           videoSrc="https://www.youtube.com/embed/abgkecRtERs?si=CXyOeG6L3LhJl4cW"
           thumbnailSrc="/img/video_thum.jpg"

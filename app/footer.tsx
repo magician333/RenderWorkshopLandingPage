@@ -86,7 +86,7 @@ export default function Footer() {
   ];
 
   return (
-    <div className="bg-white w-full pt-10 mt-10 pb-20">
+    <div className="bg-white w-full pt-16 mt-32 pb-32 border-t border-opacity-60">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center md:text-left">

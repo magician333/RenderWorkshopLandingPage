@@ -38,7 +38,7 @@ export function Work() {
           {intro_list.map((item) => (
             <CarouselItem key={item.name}>
               <div>
-                <img src={item.src} alt={item.name} className="rounded-md" />
+                <img src={item.src} alt={item.name} className="rounded-2xl " />
                 <p className="mt-10 font-semibold opacity-60">{item.name}</p>
                 <p className=" text-left text-wrap opacity-60">
                   {item.description}

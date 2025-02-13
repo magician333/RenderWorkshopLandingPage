@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { MagicCard } from "@/components/ui/magic-card";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
@@ -44,10 +43,9 @@ export default function Buy() {
         </div>
         <div className="flex  w-full justify-center items-center space-x-12">
           {market.map((item) => (
-            <MagicCard
+            <div
               key={item.name}
-              className=" whitespace-nowrap pt-10 pb-10 w-96 h-96 flex flex-col justify-center items-center text-center"
-              gradientColor="#D9D9D955"
+              className="shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] rounded-2xl whitespace-nowrap pt-10 pb-10 w-96 h-96 flex flex-col justify-center items-center text-center"
             >
               <Image
                 width={300}
@@ -76,7 +74,7 @@ export default function Buy() {
                 <a href={item.url}>Get it</a>
                 <BadgeCheck className="size-10" />
               </Button>
-            </MagicCard>
+            </div>
           ))}
         </div>
       </div>
