@@ -4,11 +4,36 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Intro() {
+  const imageList = [
+    {
+      name: "manager-Rendering",
+      src: "/img/manager-Rendering.png",
+    },
+    {
+      name: "manager-Idling",
+      src: "/img/manager-Idling.png",
+    },
+    {
+      name: "worker-homepage",
+      src: "/img/worker-homepage.png",
+    },
+    {
+      name: "worker-settingpage",
+      src: "/img/worker-settingpage.png",
+    },
+  ];
   return (
     <>
-      <div className="flex flex-col md:flex-row max-h-full">
+      <div className="flex flex-col md:flex-row max-h-full space-x-32">
         <div className="flex flex-col w-full md:w-1/2 justify-center p-4">
           <div className="mb-4">
             <TextAnimate
@@ -73,28 +98,28 @@ export default function Intro() {
             </div>
           </BlurFade>
         </div>
-        <div className="w-full md:w-1/2 flex flex-col justify-center p-4">
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              "manager-Rendering",
-              "manager-Idling",
-              "worker-homepage",
-              "worker-settingpage",
-            ].map((item, index) => (
-              <BlurFade key={index} delay={0.12 * (index + 2)} inView>
-                <div className="rounded-md aspect-square flex flex-col justify-center items-center">
-                  <Image
-                    src={`/img/${item}.png`}
-                    alt={item}
-                    className="rounded-md shadow-md"
-                    width={300}
-                    height={300}
-                  />
-                  <p className="font-light text-xs opacity-60 mt-2">{item}</p>
-                </div>
-              </BlurFade>
-            ))}
-          </div>
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4">
+          <BlurFade className="w-3/4" delay={0.12} inView>
+            <Carousel>
+              <CarouselContent>
+                {imageList.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <div className="flex flex-col items-center space-y-3">
+                      <img
+                        src={item.src}
+                        alt={item.name}
+                        className="rounded-md"
+                      />
+                      <p className=" opacity-60 text-sm">{item.name}</p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </BlurFade>
         </div>
       </div>
     </>
