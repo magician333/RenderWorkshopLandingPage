@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
