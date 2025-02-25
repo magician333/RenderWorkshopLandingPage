@@ -6,7 +6,6 @@ import {
   FilmIcon,
   HeartPulseIcon,
   ImagesIcon,
-  LanguagesIcon,
   ListTodoIcon,
   NetworkIcon,
   SmileIcon,
