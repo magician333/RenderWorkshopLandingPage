@@ -3,6 +3,7 @@ import {
   CloudOffIcon,
   CpuIcon,
   FileScanIcon,
+  FilmIcon,
   HeartPulseIcon,
   ImagesIcon,
   LanguagesIcon,
@@ -56,16 +57,16 @@ export default function Highlights() {
         "UI integration. Automatically read Blender rendering parameters without manual repeated settings.",
     },
     {
+      Icon: FilmIcon,
+      name: "AOV Support",
+      description:
+        "Supports rendering of multi-passes images and multi-layer images.",
+    },
+    {
       Icon: ListTodoIcon,
       name: "Custom Scene",
       description:
         "Multiple frames of a single scene do not need to be rendered repeatedly.",
-    },
-    {
-      Icon: SmileIcon,
-      name: "Easy Deployment",
-      description:
-        "Complete deployment with a single configuration for user-friendliness.",
     },
     {
       Icon: HeartPulseIcon,
@@ -80,17 +81,23 @@ export default function Highlights() {
         "Before rendering the MD5 file comparison. Check and re-render the miss after rendering.",
     },
     {
+      Icon: SmileIcon,
+      name: "Easy Deployment",
+      description:
+        "Complete deployment with a single configuration for user-friendliness.",
+    },
+    {
       Icon: CpuIcon,
       name: "Low Resources Usage",
       description:
         "Minimal resources consumption during standby, allowing workers to wake on demand.",
     },
-    {
-      Icon: LanguagesIcon,
-      name: "Multi-Language Support",
-      description:
-        "Supports various languages with options for custom display settings.",
-    },
+    // {
+    //   Icon: LanguagesIcon,
+    //   name: "Multi-Language Support",
+    //   description:
+    //     "Supports various languages with options for custom display settings.",
+    // },
   ];
 
   return (
@@ -112,7 +119,7 @@ export default function Highlights() {
             {/* <center> */}
             <item.Icon className="mb-2 mt-4 w-10 h-10" />
             <p className="font-bold text-lg text-center">{item.name}</p>
-            <p className="text-sm tracking-tight text-center text-wrap">
+            <p className="text-sm tracking-tight text-center text-wrap pl-2 pr-2">
               {item.description}
             </p>
             {/* </center> */}

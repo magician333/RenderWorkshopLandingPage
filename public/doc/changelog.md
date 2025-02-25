@@ -2,6 +2,14 @@
 
 > From latest version to original version
 
+**V0.27 2025.2.25**
+
+1. local image render and local animation render support rendering multiple view layers
+2. support for switching scenes by clicking on the scene name in the scene list
+3. optimized the logic of merging images, fixed the problem of loading extra image nodes when generating multi-layer openEXR
+
+---
+
 **V0.26 2025.1.26** Optimized_version
 
 1. Added multi-language support for the manager, which syncs with the language selected in Blender's preferences (currently supports English, Simplified Chinese, Traditional Chinese, German, and Japanese).
