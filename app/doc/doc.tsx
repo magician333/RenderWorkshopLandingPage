@@ -1,4 +1,3 @@
-import FAQ from "./faq";
 import { getMarkdownContent } from "../utils";
 
 export default async function Doc() {
@@ -11,7 +10,7 @@ export default async function Doc() {
         <div className="border rounded-lg shadow-md p-8 prose">
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
-        <FAQ />
+        
       </div>
     </>
   );

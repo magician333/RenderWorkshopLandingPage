@@ -10,6 +10,7 @@ import Service from "./service";
 import Changelog from "./changelog/changelog";
 import Buy from "./buy";
 import { Work } from "./work";
+import FAQ from "./faq";
 
 export default function Home() {
   return (
@@ -36,6 +37,8 @@ export default function Home() {
                 <Work />
                 <Buy />
                 <Service />
+                <FAQ />
+    
               </div>
             </TabsContent>
             <TabsContent value="document">

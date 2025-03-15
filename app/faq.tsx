@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 export default function FAQ() {
   const faqData = [
@@ -75,19 +76,30 @@ export default function FAQ() {
   return (
     <>
       <div>
-        <div className="mt-10 w-3/4 mx-auto">
-          <h1 className="text-4xl font-semibold mb-6">RenderWorkshop FAQ</h1>
-          <Accordion type="single" collapsible>
+        <div className="flex flex-col justify-center items-center">
+          <TextAnimate
+            animation="blurIn"
+            by="line"
+            as="p"
+            className="text-5xl font-bold mb-5 tracking-wider"
+          >
+            RenderWorkshop FAQ
+          </TextAnimate>
+          <Accordion type="single" collapsible className="w-2/3">
             {faqData.map((item) => (
               <AccordionItem
                 key={item.value}
                 value={item.value}
-                className="w-full text-wrap"
+                className="mb-2 bg-white rounded-md"
               >
-                <AccordionTrigger className="font-semibold text-sm">
-                  {item.question}
+                <AccordionTrigger className="px-4 py-3 hover:bg-gray-50">
+                  <div className="font-semibold text-sm break-words pr-8">
+                    {item.question}
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+                <AccordionContent className="px-4 pb-4 break-words">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
