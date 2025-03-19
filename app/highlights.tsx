@@ -35,19 +35,19 @@ export default function Highlights() {
       Icon: NetworkIcon,
       name: "Multi-Method Rendering",
       description:
-        "Supports local, remote, and distributed batch rendering for flexibility.",
+        "It supports local, remote and distributed cluster rendering, which is flexible and efficient.",
     },
     {
       Icon: ImagesIcon,
       name: "Image & Anim Support",
       description:
-        "Image and animation rendering of all file formats supported by Blender",
+        "Supports still image and animation sequence rendering in all file formats supported by Blender.",
     },
     {
       Icon: CloudOffIcon,
       name: "Local Render Farm",
       description:
-        "Queue scenes for rendering without internet, enabling private render farms.",
+        "Queue scenes for rendering without internet, enabling private render farms.Deploy for yourself.",
     },
     {
       Icon: BlenderIcon,
@@ -59,13 +59,13 @@ export default function Highlights() {
       Icon: FilmIcon,
       name: "AOV Support",
       description:
-        "Supports rendering of multi-passes images and multi-layer images.",
+        "Supports batch rendering of multi-channel images and multi-layer images at one time.",
     },
     {
       Icon: ListTodoIcon,
-      name: "Custom Scene",
+      name: "Render Queue",
       description:
-        "Multiple frames of a single scene do not need to be rendered repeatedly.",
+        "Add multiple scenes to the render queue and efficiently batch render all your content at once with ease.",
     },
     {
       Icon: HeartPulseIcon,
@@ -83,7 +83,7 @@ export default function Highlights() {
       Icon: SmileIcon,
       name: "Easy Deployment",
       description:
-        "Complete deployment with a single configuration for user-friendliness.",
+        "Deployment can be completed with one configuration, and the interface is simple, convenient and powerful.",
     },
     {
       Icon: CpuIcon,
@@ -115,13 +115,11 @@ export default function Highlights() {
             key={item.name}
             className=" shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] bg-white rounded-2xl whitespace-nowrap h-64 w-64 flex flex-col justify-center items-center overflow-hidden"
           >
-            {/* <center> */}
             <item.Icon className="mb-2 mt-4 w-10 h-10" />
             <p className="font-bold text-lg text-center">{item.name}</p>
             <p className="text-sm tracking-tight text-center text-wrap pl-2 pr-2">
               {item.description}
             </p>
-            {/* </center> */}
           </div>
         ))}
       </div>
