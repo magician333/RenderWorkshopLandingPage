@@ -50,9 +50,16 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 8. **Refresh Scene List:** Click the Refresh button to display the scene information of the `.blend` file.
 9. **Select Rendering Type:** Choose between Image or Animation pages as needed.
 10. **Set Rendering Parameters:**
-    - **Image:** Tiles: Divide the image into several blocks for rendering (e.g., 4 means dividing into 4x4=16 blocks). Set a larger value for high resolutions.
+    - **Image - tiles:** Tiles: Divide the image into several blocks for rendering (e.g., 4 means dividing into 4x4=16 blocks). Set a larger value for high resolutions.
+    - **Image - Samples Length:** Divide the image samples into different sampling length intervals (for example, 4096 samples, each sampling length is 1000, each segment renders 1000 samples, and a total of 1000+1000+1000+1000+96 images are rendered), and finally merge the images into a fully sampled image Only supports Blender 4.4.0 and above and the rendering engine is Cycles
     - **Animation:** Split: Divide the animation frames into different intervals for rendering (e.g., 1-60 frames divided into 1-15, 16-30, 31-45, 46-60). Avoid setting this value too small.
 11. **Add Scenes (Optional):** Click the + button at the bottom left of the scene list, set the scene parameters, and add it to the scene list.
+
+    You can click the expand button on the right side of the scene to expand the scene's additional settings, specifying a specific view layer or a specific camera to render.
+
+    You can also enable multiple view layers or multiple passes for AOV rendering, and if your Blender version is higher than 4.4.0 and uses the Cycles renderer, you can also use the render subset feature for image rendering.
+    ![Extra_setting](/img/scene_extra.png)
+
 12. **Real-Time Preview:** Check the Preview option under the scene list to preview image rendering in real-time.
 13. **Check and Re-render Missing Frames (Optional):** Check this option to re-render missing frames after rendering is complete.
 14. **Verify Settings:** Ensure all hosts in the Worker list are connected and verified successfully.
@@ -76,6 +83,8 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 - **UPnP Discovery Seconds:** Set the time for the Worker to search for the Manager upon startup.
 - **Save Log:** Enable this option to record Worker rendering information.
 - **Command Line Mode:** Enable this mode to save resources.
+- **Pull File:** Pull the files from the shared folder to the local rendering, which can improve the blend file reading speed when the network bandwidth is insufficient.
+- **Check Code:** If you are in a multi-user environment, you can set a check code to verify whether the manager and worker belong to you. The check code of the manager and worker must be the same for the check to succeed.
 
 ## 2. Manager Manual Configuration Explanation
 
@@ -91,6 +100,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 - `xxx.xxx.xxx.xxx check timeout:` Check the network connection of the Worker and Manager.
 - `xxx.xxx.xxx.xxx can't get blend file:` Ensure the Worker can access the blend file.
 - `xxx.xxx.xxx.xxx does not obtain the same file:` Ensure both are accessing the same blend file.
+- `xxx.xxx.xxx.xxx check code does not match: ` The check codes of the manager and worker do not match. The check codes of both parties must be the same.
 - `xxx.xxx.xxx.xxx passed worker detection:` The detection is normal.
 
 ## 4. Preferences Explanation

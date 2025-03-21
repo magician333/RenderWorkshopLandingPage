@@ -1,6 +1,30 @@
-# Change Log
+# ChangeLog
 
 > From latest version to original version
+
+**0.3 2025.3.21** Important version
+
+1. Network image rendering now supports sample subset rendering (where each worker performs a portion of the sampling, and the manager combines all parts to form the complete image, available only for scenes using Blender 4.4 and above with Cycles rendering engine, experimental!)
+2. Local image and animation rendering support for AOV (Arbitrary Output Variables, multi-layer, and multi-pass rendering).
+3. Network image and animation rendering support for AOV (only when the tile count is 1).
+4. Network animation rendering with AOV supports checking and re-rendering missing frames.
+5. Adjusted AOV output file formats to match Blender's output formats.
+6. Supports rendering of specified view layers within scenes, defaulting to the first view layer of the scene.
+7. Supports rendering of specified active cameras within scenes, defaulting to the timeline (AOV rendering is disabled when specifying a camera).
+8. The scene list now includes a function bar for setting sample subset, specifying rendering view layers, setting active cameras for rendering, enabling batch multi-layer rendering, and enabling batch multi-pass rendering.
+9. Supports checksum functionality; the checksums of the manager and workers must match for successful detection.
+10. In the worker's GPU backend, it's now possible to specify Vulkan as the rendering backend (default is OpenGL, switch manually to Vulkan), recommended for use with Blender 4.4 and above.
+11. Moved the add custom scene functionality to the collapsible section below the list.
+12. Added real-time progress display for file pulling.
+13. Removed MD5 verification when workers pull files; sync now no longer pulls files, and files are pulled every time a check is performed.
+14. Improved feedback for errors encountered during network rendering.
+15. Adjusted the cancel button icon.
+16. Fixed a bug where animation rendering wouldn't actively end the render state if re-checking wasn't selected.
+17. Fixed a bug where messages in CommandLine Mode were missing time and status.
+18. Fixed a rendering error that occurred after changing the file format and saving the file.
+19. Note: If using image formats without an Alpha channel, there are issues with tile merging, caused by a bug in Blender's compositor system; we look forward to the official fix for this bug!
+
+---
 
 **V0.27 2025.2.25**
 

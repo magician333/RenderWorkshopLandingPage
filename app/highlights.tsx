@@ -41,7 +41,7 @@ export default function Highlights() {
       Icon: ImagesIcon,
       name: "Image & Anim Support",
       description:
-        "Supports still image and animation sequence rendering in all file formats supported by Blender.",
+        "Supports still image (tiles & samples) and animation sequence rendering in all file formats supported by Blender.",
     },
     {
       Icon: CloudOffIcon,

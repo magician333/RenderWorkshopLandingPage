@@ -72,6 +72,12 @@ export default function FAQ() {
       answer:
         "Online rendering involves slicing the image into segments for distribution among computers, which can slow down the process due to multiple starts and stops of Blender and network transmission time.",
     },
+    {
+      value: "item-11",
+      question: "Is AOV workflow supported? How should AOV support be enabled?",
+      answer:
+        "Yes, RenderWorkshop supports AOV rendering.If you need to render your scene in layers, you need to set Holdout and Indirect Only for different objects/collections in different view layers, and then enable Render Layers in the extra settings of the scene list in Renderworkshop.If you need to render your scene in multiple passes, you need to enable the passes you need to render in Blender's Properties - ViewLayers - Passes, and then enable Render Passes in the extra settings of the scene list in Renderworkshop.Of course, multiple view layers and multiple passes can be enabled at the same time. But please note that if AOV rendering is enabled, tiles rendering and sampling subset rendering cannot be used",
+    },
   ];
   return (
     <>

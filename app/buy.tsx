@@ -8,7 +8,7 @@ export default function Buy() {
     {
       name: "BlenderMarket",
       url: "https://blendermarket.com/products/renderworkshop",
-      price: "$29.99",
+      price: "$49.99",
       service: "Long-term support",
       update_fee: "Free",
       func: "All features",
@@ -19,7 +19,7 @@ export default function Buy() {
     {
       name: "Gumroad",
       url: "https://spellbinder6.gumroad.com/l/renderworkshop",
-      price: "$29.99",
+      price: "$49.99",
       service: "Long-term support",
       update_fee: "Free",
       func: "All features",

@@ -17,6 +17,12 @@ export function Work() {
       src: "/work/image.gif",
     },
     {
+      name: "Image Render Process (Sample subset)",
+      description:
+        "RenderWorkshop Divide the image into several blocks for rendering (e.g., 4 means dividing into 4x4=16 blocks). It is recommended to set a larger value for high resolutions.Only available in Blender version 4.4 or higher and the rendering engine is Cycles.",
+      src: "/work/imagesamples.gif",
+    },
+    {
       name: "Animtion Render Process",
       description:
         "RenderWorkshop divides animation sequences into segments, assigning each as a task to different worker computers for rendering. Once a worker completes a segment, it's saved to shared storage. Workers that finish first are automatically assigned the next task.",
