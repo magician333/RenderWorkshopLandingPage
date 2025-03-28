@@ -2,6 +2,20 @@
 
 > From latest version to original version
 
+**0.31 2025.3.28** Optimized_version
+
+1. Worker adds real-time rendering status
+2. Worker adds display of Blender rendering errors
+3. Worker adds placeholder for blending
+4. Optimizes error handling for sampling and merge
+5. Optimizes the stability of cleaning temporary scenes
+6. Optimizes the stability of local animation rendering
+7. Fixes the bug of merging errors without Alpha format picture tiles
+8. Fixes network communication problem caused by worker binding network interface errors when computers have multiple network interfaces
+9. Fixes the problem of inconsistent color of rendering pictures
+
+---
+
 **0.3 2025.3.21** Important version
 
 1. Network image rendering now supports sample subset rendering (where each worker performs a portion of the sampling, and the manager combines all parts to form the complete image, available only for scenes using Blender 4.4 and above with Cycles rendering engine, experimental!)

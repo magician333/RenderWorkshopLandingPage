@@ -34,7 +34,7 @@ export default function Intro() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row md:space-x-8 lg:space-x-32 space-y-8 md:space-y-0">
+      <div className="flex flex-col md:flex-row md:space-x-8 lg:space-x-32 space-y-8 md:space-y-0 sm:space-x-0 sm:space-y-8">
         <div className="flex flex-col w-full md:w-1/2 justify-center">
           <div className="mb-4 md:mb-6">
             <TextAnimate
@@ -109,7 +109,7 @@ export default function Intro() {
         </div>
 
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <BlurFade className="w-full sm:w-3/4" delay={0.12} inView>
+          <BlurFade className="w-full sm:w-3/4 md:max-w-md" delay={0.12} inView>
             <Carousel className="w-full">
               <CarouselContent>
                 {imageList.map((item, index) => (
