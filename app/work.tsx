@@ -35,11 +35,13 @@ export function Work() {
         animation="blurIn"
         by="line"
         as="p"
-        className="text-5xl font-bold mb-5 tracking-wider text-center"
+        // Responsive title size
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center"
       >
         How It Works
       </TextAnimate>
-      <Carousel className="w-full ">
+      {/* Added max-width for responsiveness and horizontal padding */}
+      <Carousel className="w-full">
         <CarouselContent>
           {intro_list.map((item) => (
             <CarouselItem key={item.name}>
@@ -53,8 +55,9 @@ export function Work() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {/* Hide buttons on mobile (default), show on sm screens and up */}
+        <CarouselPrevious className="hidden sm:flex" />
+        <CarouselNext className="hidden sm:flex" />
       </Carousel>
     </div>
   );

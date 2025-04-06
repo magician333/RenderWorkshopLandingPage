@@ -105,21 +105,26 @@ export default function Highlights() {
         animation="blurIn"
         by="line"
         as="p"
-        className="text-5xl font-bold mb-5 tracking-wider text-center"
+        // Responsive text size
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center"
       >
         RenderWorkshop Features
       </TextAnimate>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4">
+      {/* Mobile: Vertical list; SM+: Grid layout */}
+      <div className="flex flex-col space-y-4 w-full p-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0 lg:grid-cols-3 xl:grid-cols-5"> {/* Changed default to flex-col, space-y-4 */}
         {features.map((item) => (
           <div
             key={item.name}
-            className=" shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] bg-white rounded-2xl whitespace-nowrap h-64 w-64 flex flex-col justify-center items-center overflow-hidden"
+            // Mobile: List item style; SM+: Grid item style
+            className="shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] bg-white rounded-2xl w-full flex flex-row items-center p-4 sm:flex-col sm:justify-start sm:min-h-[16rem] sm:p-4" // Default: flex-row, items-center; SM: flex-col, justify-start, min-h, p-4
           >
-            <item.Icon className="mb-2 mt-4 w-10 h-10" />
-            <p className="font-bold text-lg text-center">{item.name}</p>
-            <p className="text-sm tracking-tight text-center text-wrap pl-2 pr-2">
-              {item.description}
-            </p>
+            <item.Icon className="w-10 h-10 flex-shrink-0 mr-4 sm:mr-0 sm:mb-2 sm:mt-4" /> {/* Adjusted margins for list/grid */}
+            <div className="flex flex-col text-left sm:text-center"> {/* Text container for list view */}
+              <p className="font-bold text-lg mb-1 sm:mb-2">{item.name}</p> {/* Adjusted margin */}
+              <p className="text-sm tracking-tight text-wrap">
+                {item.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

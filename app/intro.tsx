@@ -41,7 +41,7 @@ export default function Intro() {
               animation="blurIn"
               by="line"
               as="p"
-              className="font-black text-4xl sm:text-5xl md:text-6xl lg:text-8xl -mb-4 sm:-mb-6 md:-mb-8 z-10 text-blender_orange"
+              className="font-black text-6xl sm:text-5xl md:text-6xl lg:text-8xl -mb-5 sm:-mb-6 md:-mb-8 z-10 text-blender_orange"
             >
               Render
             </TextAnimate>
@@ -49,12 +49,11 @@ export default function Intro() {
               animation="blurIn"
               by="line"
               as="p"
-              className="font-black text-4xl sm:text-5xl md:text-6xl lg:text-8xl pl-0 sm:pl-4 lg:pl-11 text-blender_blue"
+              className="font-black text-6xl sm:text-5xl md:text-6xl lg:text-8xl pl-4 sm:pl-4 lg:pl-11 text-blender_blue"
             >
               Workshop
             </TextAnimate>
           </div>
-
           <TextAnimate
             animation="blurIn"
             by="line"
@@ -64,7 +63,6 @@ export default function Intro() {
             A distributed rendering system meticulously designed specifically
             for Blender
           </TextAnimate>
-
           <TextAnimate
             animation="blurIn"
             by="line"
@@ -77,23 +75,22 @@ export default function Intro() {
             various measures to safeguard your render files, providing reliable
             protection for your rendering tasks.
           </TextAnimate>
-
           <BlurFade delay={0.1} inView>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6">
               <Link
-                href="https://blendermarket.com/products/renderworkshop"
+                href="https://spellbinder6.gumroad.com/l/renderworkshop"
                 className="w-full sm:w-auto"
               >
                 <Button
                   className="bg-blender_orange font-semibold w-full sm:w-auto shadow-none leading-none tracking-wide"
                   size="lg"
                 >
-                  Get it
+                  Get it at Gumroad
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
               </Link>
               <Link
-                href="https://blendermarket.com/creators/purplefire"
+                href="https://spellbinder6.gumroad.com/l/renderworkshop"
                 className="w-full sm:w-auto"
               >
                 <Button
@@ -101,15 +98,22 @@ export default function Intro() {
                   variant="outline"
                   size="lg"
                 >
-                  Creator Page
+                  Get it at BlenderMarket
                 </Button>
               </Link>
-            </div>
-          </BlurFade>
-        </div>
-
+            </div>{" "}
+            {/* Closing div for button container */}
+          </BlurFade>{" "}
+          {/* Closing BlurFade for button section */}
+        </div>{" "}
+        {/* Closing div for left column */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <BlurFade className="w-full sm:w-3/4 md:max-w-md" delay={0.12} inView>
+          {/* Adjusted max-width for larger screens */}
+          <BlurFade
+            className="w-full sm:w-3/4 md:max-w-md lg:max-w-lg"
+            delay={0.12}
+            inView
+          >
             <Carousel className="w-full">
               <CarouselContent>
                 {imageList.map((item, index) => (

@@ -88,7 +88,8 @@ export default function Footer() {
   return (
     <div className="bg-white w-full pt-16 mt-32 pb-32 border-t border-opacity-60">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Increased gap between columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16"> {/* Increased gap-8 to gap-12 md:gap-16 */}
           <div className="text-center md:text-left">
             <div className="flex justify-center md:justify-start">
               <Image src="/logo/logo.svg" alt="logo" width={200} height={100} />
@@ -99,8 +100,9 @@ export default function Footer() {
           </div>
 
           <div className="text-center md:text-left">
-            <p className="font-semibold text-lg">Other Opus</p>
-            <div className="space-y-1">
+            {/* Added bottom margin to title */}
+            <p className="font-semibold text-lg mb-3">Other Opus</p>
+            <div className="space-y-1 mt-2"> {/* Added mt-2 for spacing */}
               {opus.map((item) => (
                 <Link href={item.url} key={item.name}>
                   <p className="font-medium text-sm hover:opacity-100">
@@ -112,8 +114,12 @@ export default function Footer() {
           </div>
 
           <div className="text-center md:text-left">
-            <p className="font-semibold text-lg">Follow Me</p>
-            <div className="space-x-3 flex ">
+            {/* Added bottom margin to title */}
+            <p className="font-semibold text-lg mb-3">Follow Me</p>
+            {/* Adjusted spacing for social icons */}
+            <div className="space-x-3 md:space-x-4 flex justify-center md:justify-start mt-2">
+              {" "}
+              {/* Added justify-center/start and mt-2 */}
               {media.map((item) => (
                 <Link href={item.url} key={item.name}>
                   <item.icon />

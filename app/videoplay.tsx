@@ -10,7 +10,8 @@ export default function VideoPlayer() {
             animation="blurIn"
             by="line"
             as="p"
-            className="text-5xl font-bold mb-5 tracking-wider"
+            // Responsive title size
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" // Added text-center
           >
             Introducing RenderWorkshop
           </TextAnimate>

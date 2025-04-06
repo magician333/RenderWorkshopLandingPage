@@ -15,11 +15,12 @@ import FAQ from "./faq";
 export default function Home() {
   return (
     <>
-      <div>
-        <div className="flex flex-col w-screen h-screen pt-10 pl-48 pr-48 ">
-          <Tabs defaultValue="home" className="z-10">
-            <TabsList>
-              <TabsTrigger value="home" className=" tracking-wide">
+      {/* Removed h-screen to allow content to determine height */}
+      {/* Adjusted padding for responsiveness: p-4 on small screens, increasing up to pl-48 pr-48 on large screens */}
+      <div className="flex flex-col w-screen min-h-screen pt-10 p-4 sm:p-8 md:p-16 lg:px-32 xl:px-48">
+        <Tabs defaultValue="home" className="z-10 w-full"> {/* Added w-full to Tabs */}
+          <TabsList className="overflow-x-auto"> {/* Allow scrolling on small screens if needed */}
+            <TabsTrigger value="home" className=" tracking-wide">
                 Home
               </TabsTrigger>
               <TabsTrigger value="document" className=" tracking-wide">
@@ -61,8 +62,8 @@ export default function Home() {
             )}
           />
           <Footer />
-        </div>
-      </div>
+        </div> {/* This closes the main content div */}
+      {/* Removed the extra closing div here */}
     </>
   );
 }
