@@ -43,7 +43,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 1. **Install the Plugin:** Download the latest Manager plugin file to the Manager computer, install it in Blender, and enable the plugin.
 2. **Open the Blend File:** Open the `.blend` file to be rendered (e.g., `//192.168.0.10/render/test.blend`).
 3. **Open the RenderWorkshop Panel:** Press `N` to open the N panel and locate RenderWorkshop.
-4. **Set Server Port:** In the Network Service Section, set the server port (must match the port number in the Worker settings). If there are no port conflicts, it is recommended to keep the default.
+4. **Set Server IP address and Port**: In the Network Service section, set the server IP address and port (must be the same as the port number in the Worker settings). If your computer has multiple IP address mappings, you can set the IP address manually. If there is no port conflict, it is recommended to keep the default value.
 5. **Start the Server:** Click the Start Server button. If prompted for network access permissions, allow it.
 6. **Worker Connection:** If the Worker is running and configured correctly, it will automatically connect and appear in the Worker list.
 7. **Worker Verification:** The Manager will automatically verify the Worker. If verification fails, click the button on the left side of the Worker to verify manually.
@@ -68,7 +68,8 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 17. **Real-Time Feedback:** View real-time rendering feedback in the message list.
 18. **Heartbeat Detection (Optional):** During rendering, heartbeat detection is performed on the Worker.
 19. **Cancel Rendering (Optional):** Click the Cancel button to cancel rendering.
-20. **Message List Operations (Optional):** Expand/collapse the message list or clear it as needed.
+20. **Custom Output Path (Optional)**: You can set the path where the rendered files are exported. The manager and all workers must point to the same path
+21. **Message List Operations (Optional):** Expand/collapse the message list or clear it as needed.
     ![Manager_Idling](/img/manager-Idling.png)
 
 # Appendix
@@ -81,6 +82,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 - **Cycles Render Both:** Choose whether to enable both CPU and GPU rendering.
 - **Retry Interval Seconds:** Set the retry interval after failing to connect to the Manager.
 - **UPnP Discovery Seconds:** Set the time for the Worker to search for the Manager upon startup.
+- **Network Interface:** If you have multiple network cards on your computer, you can select a specific network card to run the worker.
 - **Save Log:** Enable this option to record Worker rendering information.
 - **Command Line Mode:** Enable this mode to save resources.
 - **Pull File:** Pull the files from the shared folder to the local rendering, which can improve the blend file reading speed when the network bandwidth is insufficient.
@@ -101,6 +103,8 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 - `xxx.xxx.xxx.xxx can't get blend file:` Ensure the Worker can access the blend file.
 - `xxx.xxx.xxx.xxx does not obtain the same file:` Ensure both are accessing the same blend file.
 - `xxx.xxx.xxx.xxx check code does not match: ` The check codes of the manager and worker do not match. The check codes of both parties must be the same.
+- `xxx.xxx.xxx.xxx output path does not match or flag file losed: `The export paths set by the worker and manager may point to different directories, or the flag file may be missing. You can check whether the worker and manager point to the same directory, or whether the manager and worker have read and write permissions to this directory, or you can restart the server to rebuild the flag file.
+- `xxx.xxx.xxx.xxx flag file MD5 does not match:` The md5 checksum of the flag file does not match. Please check whether the manager and worker point to the same directory and have read and write permissions.
 - `xxx.xxx.xxx.xxx passed worker detection:` The detection is normal.
 
 ## 4. Preferences Explanation

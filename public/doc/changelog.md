@@ -2,6 +2,24 @@
 
 > From latest version to original version
 
+**0.32 2025.4.11** Important version
+
+1. Allow custom rendering storage directory
+2. Manager allows custom IP (Thanks to Spencer Scelfo's suggestions and testing)
+3. Worker allows custom network interface
+4. Worker homepage supports displaying local IP
+5. Manager supports displaying debug information
+6. Optimize the display of additional content in the scene list
+7. Optimize the logic of IP detection network cards in worker
+8. Optimize the worker interface
+9. Fix the bug where the worker command line mode information output is duplicated
+10. Fix the bug where the worker does not return content when the worker checks the md5 error
+11. Fix the bug where the interface error occurs when the image rendering is used to render AOV rendering
+12. Fix the bug that cannot be rendered may occur when online AOV rendering
+13. Fixed a bug where missing active camera or view layer errors were checked and rendered missing frames
+
+---
+
 **0.31 2025.3.28** Optimized_version
 
 1. Worker adds real-time rendering status
