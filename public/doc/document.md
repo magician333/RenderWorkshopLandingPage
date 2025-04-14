@@ -36,7 +36,8 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 4. **Restart Worker:** Restart the Worker. On the first launch, it will automatically detect the Cycles rendering devices and GPU backend set in Blender (this may take several seconds).
 5. **Network Permissions:** If prompted for network access permissions for the Worker, allow it.
 6. **Configuration Success:** If the Worker homepage displays all parameters correctly, the configuration is successful.
-   ![worker-setting](/img/worker-settingpage.png)
+   ![worker-homepage](/screenshot/worker-home.png)
+   ![worker-setting](/screenshot/worker-setting.png)
 
 # Manager Usage Instructions
 
@@ -50,15 +51,20 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 8. **Refresh Scene List:** Click the Refresh button to display the scene information of the `.blend` file.
 9. **Select Rendering Type:** Choose between Image or Animation pages as needed.
 10. **Set Rendering Parameters:**
+
     - **Image - tiles:** Tiles: Divide the image into several blocks for rendering (e.g., 4 means dividing into 4x4=16 blocks). Set a larger value for high resolutions.
     - **Image - Samples Length:** Divide the image samples into different sampling length intervals (for example, 4096 samples, each sampling length is 1000, each segment renders 1000 samples, and a total of 1000+1000+1000+1000+96 images are rendered), and finally merge the images into a fully sampled image Only supports Blender 4.4.0 and above and the rendering engine is Cycles
     - **Animation:** Split: Divide the animation frames into different intervals for rendering (e.g., 1-60 frames divided into 1-15, 16-30, 31-45, 46-60). Avoid setting this value too small.
-11. **Add Scenes (Optional):** Click the + button at the bottom left of the scene list, set the scene parameters, and add it to the scene list.
 
     You can click the expand button on the right side of the scene to expand the scene's additional settings, specifying a specific view layer or a specific camera to render.
 
     You can also enable multiple view layers or multiple passes for AOV rendering, and if your Blender version is higher than 4.4.0 and uses the Cycles renderer, you can also use the render subset feature for image rendering.
-    ![Extra_setting](/img/scene_extra.png)
+
+    ![Extra_setting](/screenshot/manager-extrasetting.png)
+
+11. **Add Scenes (Optional):** Click the + button at the bottom left of the scene list, set the scene parameters, and add it to the scene list.
+
+    ![Custom Scene](/screenshot/manager-customscene.png)
 
 12. **Real-Time Preview:** Check the Preview option under the scene list to preview image rendering in real-time.
 13. **Check and Re-render Missing Frames (Optional):** Check this option to re-render missing frames after rendering is complete.
@@ -70,7 +76,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 19. **Cancel Rendering (Optional):** Click the Cancel button to cancel rendering.
 20. **Custom Output Path (Optional)**: You can set the path where the rendered files are exported. The manager and all workers must point to the same path
 21. **Message List Operations (Optional):** Expand/collapse the message list or clear it as needed.
-    ![Manager_Idling](/img/manager-Idling.png)
+    ![Manager_Idling](/screenshot/manager-animation-idling.png)
 
 # Appendix
 

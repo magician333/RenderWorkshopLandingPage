@@ -15,20 +15,32 @@ import {
 export default function Intro() {
   const imageList = [
     {
-      name: "manager-Rendering",
-      src: "/img/manager-Rendering.png",
+      name: "manager animation idling",
+      src: "/screenshot/manager-animation-idling.png",
     },
     {
-      name: "manager-Idling",
-      src: "/img/manager-Idling.png",
+      name: "manager image idling",
+      src: "/screenshot/manager-image-idling.png",
     },
     {
-      name: "worker-homepage",
-      src: "/img/worker-homepage.png",
+      name: "manager animation rendering",
+      src: "/screenshot/manager-animation-rendering.png",
     },
     {
-      name: "worker-settingpage",
-      src: "/img/worker-settingpage.png",
+      name: "manager image rendering",
+      src: "/screenshot/manager-image-rendering.png",
+    },
+    {
+      name: "manager extra settings",
+      src: "/screenshot/manager-extrasetting.png",
+    },
+    {
+      name: "worker home page",
+      src: "/screenshot/worker-home.png",
+    },
+    {
+      name: "worker setting page",
+      src: "/screenshot/worker-setting.png",
     },
   ];
 
