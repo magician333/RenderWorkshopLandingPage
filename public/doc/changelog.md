@@ -2,6 +2,34 @@
 
 > From latest version to original version
 
+**0.33 2025.4.18** Optimized_version
+
+1. Added checksum automatic completion for worker Output Path
+2. Optimized the length display of the worker message list. The limit of only the last five pieces of information is removed under the normal mode, and the message list is adjusted to scrolling display (the initial display may be incorrect on computers with multiple resolutions and different scaling ratios at the same time. Manually adjust the worker window size to restore normal display)
+3. Optimized the worker operation logic, and no longer allowed to enter the settings page during rendering.
+4. Optimized the way to obtain IP in the worker, and the new method is more stable.
+5. Optimized the delay of reply manager in the worker and improve the response speed.
+6. Optimized the accuracy of recording rendering time in the worker to two decimal places.
+7. Optimized the robustness of the code that pulls blend files when detecting worker and added information return when pulling file errors.
+8. Optimized the cursor jump of the worker settings page (the key needs to be pressed once more when jumping the head item)
+9. Optimize the robustness of the code for automatically searching executable files for the worker
+10. Optimize the performance of the worker setting page to verify the blender executable files
+11. Optimize the manager's main page code and attribute management code
+12. Optimize the manager's sending and worker receiving information to avoid errors caused by special characters such as scene names
+13. Optimize the restart logic of the server after the service is disconnected in the manager
+14. Optimize the code for repeated definitions of attributes in the SceneImageItem in the manager
+15. Remove the options related to manager preference settings center jump detection, the default heartbeat detection interval is 10s, and the maximum error retry is 3 times
+16. Fixed the bug where the manager check worker is likely to not be automatically checked or manually click the verification button multiple times without response
+17. Fixed bug in the path during AOV rendering when the manager is empty
+18. Fixed bug in the local rendering path when the manager does not fill in the custom rendering path
+19. Fixed bug in the message that the message does not display ip when the manager does not fill in the ip.
+20. Fixed bug in the garbled code caused by non-English characters in the drop-down list of the new scenes in the manager
+21. Fixed bug in the display of the worker that the rendering is still output after the worker cancels the rendering
+22. Fixed bug in the duplicate output and repeated return commands that occurred when the rendering was cancelled
+23. Fixed bug in the bug in the error of quickly clicking to render again after canceling the rendering.
+
+---
+
 **0.32 2025.4.11** Important version
 
 1. Allow custom rendering storage directory

@@ -33,11 +33,12 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 1. **Download and Extract:** Download the latest Worker compressed file to the Worker computer and extract it.
 2. **Start Worker:** Select the file suitable for your operating system and start the Worker.
 3. **Initial Setup:** On the first launch, the setup interface will appear. Configure the relevant parameters, press `Control + S` to save, and then press `Esc` to exit.
+   ![worker-setting](/screenshot/worker-setting.png)
 4. **Restart Worker:** Restart the Worker. On the first launch, it will automatically detect the Cycles rendering devices and GPU backend set in Blender (this may take several seconds).
 5. **Network Permissions:** If prompted for network access permissions for the Worker, allow it.
 6. **Configuration Success:** If the Worker homepage displays all parameters correctly, the configuration is successful.
    ![worker-homepage](/screenshot/worker-home.png)
-   ![worker-setting](/screenshot/worker-setting.png)
+   the initial display may be incorrect on computers with multiple resolutions and different scaling ratios at the same time. Manually adjust the worker window size to restore normal display
 
 # Manager Usage Instructions
 
