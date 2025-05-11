@@ -2,6 +2,14 @@
 
 > From latest version to original version
 
+**0.34 2025.5.11** Optimized_version
+
+1. Manager optimized the logic of receiving messages
+2. Manager optimized the path escape under different systems
+3. Fixed the bug of missing checkcode
+
+---
+
 **0.33 2025.4.18** Optimized_version
 
 1. Added checksum automatic completion for worker Output Path
