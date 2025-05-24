@@ -27,6 +27,17 @@ export default function Buy() {
       icon: "blendermarket.png",
       recommend: true,
     },
+        {
+      name: "BiliBili工房",
+      url: "https://mall.bilibili.com/neul-next/detailuniversal/detail.html?isMerchant=1&page=detailuniversal_detail&saleType=10&itemsId=12438818&loadingShow=1&noTitleBar=1&msource=merchant_shar",
+      price: "￥300",
+      service: "长期支持",
+      update_fee: "免费",
+      func: "全功能",
+      status: "在售",
+      icon: "bilibili.png",
+      recommend: true,
+    },
   ];
   return (
     <>
