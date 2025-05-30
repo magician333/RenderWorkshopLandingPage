@@ -2,6 +2,9 @@
 
 > From latest version to original version
 
+**0.35 2025.5.30** Emergency fix version
+1. Fixed the issue with convertblendfile function reporting an error,Thanks for @VM
+   
 **0.34 2025.5.11** Optimized_version
 
 1. Manager optimized the logic of receiving messages
