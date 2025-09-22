@@ -102,7 +102,7 @@ export default function Intro() {
                 </Button>
               </Link>
               <Link
-                href="https://spellbinder6.gumroad.com/l/renderworkshop"
+                href="https://superhivemarket.com/products/renderworkshop"
                 className="w-full sm:w-auto"
               >
                 <Button
