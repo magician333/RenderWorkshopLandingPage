@@ -2,7 +2,10 @@
 
 > From latest version to original version
 
-
+**0.36 2025.12.14** interim version
+1. Basic image and animation rendering functions are now compatible with Blender 5.0; AOV rendering will be compatible in the next version.
+2. Improved some text translations.
+---
 
 **0.35 2025.5.30** Emergency fix version
 1. Fixed the issue with convertblendfile function reporting an error,Thanks for @VM
