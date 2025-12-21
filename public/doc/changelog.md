@@ -2,6 +2,13 @@
 
 > From latest version to original version
 
+
+**0.37 2025.12.21**
+1. Added support for AOV rendering in Blender 5.0
+2. Added support for ACES 2.0
+3. Fixed the issue of AOV rendering format changing to PNG
+---
+
 **0.36 2025.12.14** interim version
 1. Basic image and animation rendering functions are now compatible with Blender 5.0; AOV rendering will be compatible in the next version.
 2. Improved some text translations.
