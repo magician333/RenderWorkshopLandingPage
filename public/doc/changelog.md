@@ -2,7 +2,12 @@
 
 > From latest version to original version
 
-
+**0.38 2026.2.8** Optimized_version
+1. Rewrote local rendering logic to utilize sub-processes, resulting in a smoother user experience.
+2. Refactored and optimized the performance of the Manager-side server.
+3. Optimized the communication logic between the Manager and the Worker.
+4. Resolved a crash issue occurring when rendering a large number of files locally.
+---
 **0.37 2025.12.21**
 1. Added support for AOV rendering in Blender 5.0
 2. Added support for ACES 2.0
