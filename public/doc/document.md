@@ -94,6 +94,7 @@ Use less powerful computers as Manager and more powerful computers as Worker.
 - **Command Line Mode:** Enable this mode to save resources.
 - **Pull File:** Pull the files from the shared folder to the local rendering, which can improve the blend file reading speed when the network bandwidth is insufficient.
 - **Check Code:** If you are in a multi-user environment, you can set a check code to verify whether the manager and worker belong to you. The check code of the manager and worker must be the same for the check to succeed.
+- **Automatic Startup:**If you need the worker program to start automatically on boot, please run the program as administrator and enable this option.
 
 ## 2. Manager Manual Configuration Explanation
 
