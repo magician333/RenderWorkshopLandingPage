@@ -2,12 +2,24 @@
 
 > From latest version to original version
 
+**0.39 2026.2.23**
+1. Added a system daemon feature to the worker, enabling it to start automatically on boot.
+2. Optimized the manager server's message queue, resolving severe delays in message parsing.
+3. Optimized the JSON file detection logic within the worker.
+4. Optimized the render failure detection logic when the worker is rendering images.
+5. Fixed a manager heartbeat detection timeout issue that caused noticeable UI lag or stalled background threads.
+6. Fixed an issue where the manager server would repeatedly reconnect to the worker.
+7. Fixed an Out-Of-Memory (OOM) vulnerability related to packet length in the worker.
+8. Fixed a potential null pointer dereference when the worker cancels a task.
+---
+
 **0.38 2026.2.8** Optimized_version
 1. Rewrote local rendering logic to utilize sub-processes, resulting in a smoother user experience.
 2. Refactored and optimized the performance of the Manager-side server.
 3. Optimized the communication logic between the Manager and the Worker.
 4. Resolved a crash issue occurring when rendering a large number of files locally.
 ---
+
 **0.37 2025.12.21**
 1. Added support for AOV rendering in Blender 5.0
 2. Added support for ACES 2.0
