@@ -4,6 +4,7 @@ Welcome to RenderWorkshop\! This is a distributed rendering system designed spec
 
 This tutorial is divided into a **"Quick Start Guide"** (for general users) and an **"Advanced Configuration Guide"** (for professional/advanced users).
 
+![RenderWorkshop System](/doc/renderworkshop_system.png)
 *(Figure: RenderWorkshop Architecture System)*
 
 -----
