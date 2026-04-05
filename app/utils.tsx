@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import { remark } from "remark";
 
 export async function getMarkdownContent(fileName: string) {
-  const filePath = path.join(process.cwd(), "public", "doc", fileName);
+  const filePath = path.join(process.cwd(), "content", fileName);
 
   const fileContents = fs.readFileSync(filePath, "utf8");
 
