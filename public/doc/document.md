@@ -1,129 +1,121 @@
-# Preparation Before Use
+# RenderWorkshop User Manual
 
-![RenderWorkshop System](/doc/renderworkshop_system.png)
+Welcome to RenderWorkshop\! This is a distributed rendering system designed specifically for Blender. It allows you to connect multiple computers to jointly complete heavy image or animation rendering tasks, saving you a significant amount of time.
 
-> RenderWorkshop Architecture System
+This tutorial is divided into a **"Quick Start Guide"** (for general users) and an **"Advanced Configuration Guide"** (for professional/advanced users).
 
-#### 1. Shared Storage Space
+*(Figure: RenderWorkshop Architecture System)*
 
-Ensure you have a shared storage space (e.g., `//192.168.0.10/render`) accessible by all computers.
+-----
 
-#### 2. Computer Settings
+## 🟢 Quick Start Guide (For General Users)
 
-Set all computers to not sleep.
+With just four simple stages, you can get multiple computers working for you simultaneously\!
 
-#### 3. Blender File Preparation
+### Stage 1: Preparation
 
-In Blender, prepare the `.blend` file to be rendered (e.g., `test.blend`):
+1.  **Shared Storage Space:** Ensure you have a shared folder accessible by all computers over the network (e.g., `//192.168.0.10/render`).
+2.  **Computer Settings:** Please set all participating computers to **not sleep** to prevent rendering interruptions.
+3.  **Blender Installation:** Ensure all computers have the same version of Blender installed.
+4.  **Blender File Preparation:**
+      * Open your project in Blender, click `File -> External Data -> Pack Resources` from the top menu (to pack all materials and textures into the file).
+      * Save this `.blend` file into the **shared storage space** you just prepared.
 
-- Select `File -> External Data -> Pack Resources`.
-- Set rendering parameters (e.g., rendering engine, resolution, color management, etc.).
-- Place the `test.blend` file in the shared storage space (e.g., `//192.168.0.10/render/test.blend`).
+### Stage 2: Configure the Manager
 
-#### 4. Blender Installation
+*The Manager is the computer used to assign tasks. We need to start its server first.*
 
-Install Blender on all computers. It is recommended to use the same version.
+1.  Install the Manager plugin in your Blender and enable it.
+2.  Open the `.blend` file you just saved from the **shared storage space**.
+3.  Press `N` in the Blender interface and find **RenderWorkshop** in the right panel.
+4.  In the **Start/Stop Manager Server** section, click the **Start Server** button.
+    *(If prompted for network access permissions by the system, please allow it)*
 
-#### 5. Resource Allocation Suggestion
+### Stage 3: Configure the Worker
 
-Use less powerful computers as Manager and more powerful computers as Worker.
+*Workers are the computers that actually do the rendering. It is recommended to use more powerful machines for this.*
 
-# Worker Usage Instructions
+1.  **Download and Extract:** Choose and download the corresponding version of the Worker compressed file based on this computer's operating system and architecture, and extract it to run.
+    > **Note:** Due to compatibility issues with some computer terminals causing display abnormalities, please manually resize the window to display the interface normally.
+2.  **Initial Setup:** On the first launch, the **RenderWorkshop Settings** interface will appear. In most cases, you only need to ensure the **Blender Path** is correct. Press `Control + S` to save the settings, and then press `Esc` to quit.
+3.  **Connect to Server:** Restart the Worker program. The Worker will automatically discover and connect to the Manager on the local network within the default **UPnP Discovery Seconds** (usually 10s).
+    > **Important:** If the interface consistently shows `Wait for connecting...`, it means it **has not connected** to the Manager (it does not mean it's ready to take tasks). If it times out without connecting, please manually configure the Manager's IP and port in the settings, or try restarting the server on the Manager side (Stop Server, then Start Server).
+    > *(Note: Some routers may disable UPnP discovery for security reasons. In this case, you need to manually enter the IP to connect or disable this security option in your router settings.)*
 
-1. **Download and Extract:** Download the latest Worker compressed file to the Worker computer and extract it.
-2. **Start Worker:** Select the file suitable for your operating system and start the Worker.
-3. **Initial Setup:** On the first launch, the setup interface will appear. Configure the relevant parameters, press `Control + S` to save, and then press `Esc` to exit.
-   ![worker-setting](/screenshot/worker-setting.png)
-4. **Restart Worker:** Restart the Worker. On the first launch, it will automatically detect the Cycles rendering devices and GPU backend set in Blender (this may take several seconds).
-5. **Network Permissions:** If prompted for network access permissions for the Worker, allow it.
-6. **Configuration Success:** If the Worker homepage displays all parameters correctly, the configuration is successful.
-   ![worker-homepage](/screenshot/worker-home.png)
-   the initial display may be incorrect on computers with multiple resolutions and different scaling ratios at the same time. Manually adjust the worker window size to restore normal display
+### Stage 4: Start Rendering\!
 
-# Manager Usage Instructions
+1.  Go back to the Manager computer. If successfully connected within the LAN, the Worker will automatically appear in the list below, displaying `Check passed`.
+2.  **Refresh Scene:** Click the **Refresh** button. The system will read the scene and camera settings from your file. **Please note: Whenever there is any change in your scene, you must click this button to refresh.**
+3.  Choose between the **Image** or **Animation** pages according to your needs.
+4.  Click the **Start Render Image** or **Start Render Animation** button at the bottom to start rendering\!
+    You can view the real-time rendering progress in the **Render Message** list.
 
-1. **Install the Plugin:** Download the latest Manager plugin file to the Manager computer, install it in Blender, and enable the plugin.
-2. **Open the Blend File:** Open the `.blend` file to be rendered (e.g., `//192.168.0.10/render/test.blend`).
-3. **Open the RenderWorkshop Panel:** Press `N` to open the N panel and locate RenderWorkshop.
-4. **Set Server IP address and Port**: In the Network Service section, set the server IP address and port (must be the same as the port number in the Worker settings). If your computer has multiple IP address mappings, you can set the IP address manually. If there is no port conflict, it is recommended to keep the default value.
-5. **Start the Server:** Click the Start Server button. If prompted for network access permissions, allow it.
-6. **Worker Connection:** If the Worker is running and configured correctly, it will automatically connect and appear in the Worker list.
-7. **Worker Verification:** The Manager will automatically verify the Worker. If verification fails, click the button on the left side of the Worker to verify manually.
-8. **Refresh Scene List:** Click the Refresh button to display the scene information of the `.blend` file.
-9. **Select Rendering Type:** Choose between Image or Animation pages as needed.
-10. **Set Rendering Parameters:**
+-----
 
-    - **Image - tiles:** Tiles: Divide the image into several blocks for rendering (e.g., 4 means dividing into 4x4=16 blocks). Set a larger value for high resolutions.
-    - **Image - Samples Length:** Divide the image samples into different sampling length intervals (for example, 4096 samples, each sampling length is 1000, each segment renders 1000 samples, and a total of 1000+1000+1000+1000+96 images are rendered), and finally merge the images into a fully sampled image Only supports Blender 4.4.0 and above and the rendering engine is Cycles
-    - **Animation:** Split: Divide the animation frames into different intervals for rendering (e.g., 1-60 frames divided into 1-15, 16-30, 31-45, 46-60). Avoid setting this value too small.
+## 🔴 Advanced Configuration Guide (For Professional/Advanced Users)
 
-    You can click the expand button on the right side of the scene to expand the scene's additional settings, specifying a specific view layer or a specific camera to render.
+To meet the needs of complex projects and varied network environments, RenderWorkshop provides rich custom parameters.
 
-    You can also enable multiple view layers or multiple passes for AOV rendering, and if your Blender version is higher than 4.4.0 and uses the Cycles renderer, you can also use the render subset feature for image rendering.
+### 1\. Worker Advanced Parameters (Worker Settings)
 
-    ![Extra_setting](/screenshot/manager-extrasetting.png)
+In the Worker's setting interface, you can perform the following professional tweaks:
 
-11. **Add Scenes (Optional):** Click the + button at the bottom left of the scene list, set the scene parameters, and add it to the scene list.
+  * **Network Interface:** If the computer has multiple network cards, it may cause connection failures. Please select the correct network interface here to get the correct IP.
+  * **Automatic Startup:** If you need the Worker program to start automatically on boot, please run the Worker as an administrator and enable this option in the settings.
+  * **Pull BlendFile:** When enabled, the Worker will pull the `.blend` file from the shared network to local storage for rendering. This can significantly improve reading speeds when network bandwidth is insufficient.
+  * **Cycles Render Both:** For the Cycles engine only. When enabled, the system will simultaneously use both the CPU and GPU for hybrid rendering.
+  * **CommandLine Mode:** Enable this mode to run the Worker in the background without a graphical interface, saving system resources for the rendering process.
+  * **Check Code:** Security check code. In a multi-user environment sharing the same LAN, setting the same Check Code on both the Manager and Worker prevents accidental connections from others.
+  * **UPnP Discovery Seconds:** The duration to automatically search for the Manager's broadcast (it will stop searching after it times out).
+  * **Retry Interval Seconds:** The interval frequency to attempt reconnection to the Manager after a disconnection.
 
-    ![Custom Scene](/screenshot/manager-customscene.png)
+### 2\. Manager Advanced Parameters (Manager Panel)
 
-12. **Real-Time Preview:** Check the Preview option under the scene list to preview image rendering in real-time.
-13. **Check and Re-render Missing Frames (Optional):** Check this option to re-render missing frames after rendering is complete.
-14. **Verify Settings:** Ensure all hosts in the Worker list are connected and verified successfully.
-15. **Start Rendering:** Click the Render Image or Render Animation button to start rendering.
-16. **Rendering Results:** The rendered content will be saved in the same directory as the `.blend` file.
-17. **Real-Time Feedback:** View real-time rendering feedback in the message list.
-18. **Heartbeat Detection (Optional):** During rendering, heartbeat detection is performed on the Worker.
-19. **Cancel Rendering (Optional):** Click the Cancel button to cancel rendering.
-20. **Custom Output Path (Optional)**: You can set the path where the rendered files are exported. The manager and all workers must point to the same path
-21. **Message List Operations (Optional):** Expand/collapse the message list or clear it as needed.
-    ![Manager_Idling](/screenshot/manager-animation-idling.png)
+#### A. Hardware and Thread Scheduling
 
-# Appendix
+In the Worker list, **click the arrow on the right side of the Worker** to expand the parameter settings for that node:
+*You can manually assign specific `Cycles Devices` or `GPU backend`, and limit the number of rendering `Threads` it uses.*
 
-## 1. Worker Settings Explanation
+> **Note:** These settings can only be modified when the status is not `Check passed`. After setting, you need to click the **Check** button on the left side of the Worker to re-verify.
 
-- **Server IP:** Automatically detects the Manager's IP address within the subnet by default.
-- **Server Port:** Automatically detects the Manager's service port within the subnet by default.
-- **Blender Path:** Automatically detects the Blender installation path by default.
-- **Cycles Render Both:** Choose whether to enable both CPU and GPU rendering.
-- **Retry Interval Seconds:** Set the retry interval after failing to connect to the Manager.
-- **UPnP Discovery Seconds:** Set the time for the Worker to search for the Manager upon startup.
-- **Network Interface:** If you have multiple network cards on your computer, you can select a specific network card to run the worker.
-- **Save Log:** Enable this option to record Worker rendering information.
-- **Command Line Mode:** Enable this mode to save resources.
-- **Pull File:** Pull the files from the shared folder to the local rendering, which can improve the blend file reading speed when the network bandwidth is insufficient.
-- **Check Code:** If you are in a multi-user environment, you can set a check code to verify whether the manager and worker belong to you. The check code of the manager and worker must be the same for the check to succeed.
-- **Automatic Startup:**If you need the worker program to start automatically on boot, please run the program as administrator and enable this option.
+#### B. Image Distributed Rendering Strategy (Image)
 
-## 2. Manager Manual Configuration Explanation
+For ultra-high resolution single images:
 
-- **Cycles Devices:** Set the devices used by the Cycles rendering engine.
-- **GPU Backend:** Set the GPU backend.
-- **Threads:** Set the number of threads for Worker rendering (1-1024).
-- **BlendFile:** Set the absolute path for the Worker to access the `.blend` file.
+  * **Tiles:** Divide the image into blocks. For example, setting it to `4` divides the single image into 4x4=16 blocks, distributes them to multiple machines for rendering, and seamlessly merges them.
+  * **Samples** and **Sample Subset:** (⚠️ *Only supports Blender 4.4.0+ and the Cycles engine*) Uses sample rate splitting algorithms. Multiple machines render different sample intervals respectively, which are finally merged and denoised into a perfect image.
 
-## 3. Solutions for Detecting Workers
+#### C. Animation Distributed Rendering Strategy (Animation)
 
-- `get local blend file error:` Re-open the blend file or check Blender's permissions.
-- `please save the blend file:` Save the blend file to the shared storage space.
-- `xxx.xxx.xxx.xxx check timeout:` Check the network connection of the Worker and Manager.
-- `xxx.xxx.xxx.xxx can't get blend file:` Ensure the Worker can access the blend file.
-- `xxx.xxx.xxx.xxx does not obtain the same file:` Ensure both are accessing the same blend file.
-- `xxx.xxx.xxx.xxx check code does not match: ` The check codes of the manager and worker do not match. The check codes of both parties must be the same.
-- `xxx.xxx.xxx.xxx output path does not match or flag file losed: `The export paths set by the worker and manager may point to different directories, or the flag file may be missing. You can check whether the worker and manager point to the same directory, or whether the manager and worker have read and write permissions to this directory, or you can restart the server to rebuild the flag file.
-- `xxx.xxx.xxx.xxx flag file MD5 does not match:` The md5 checksum of the flag file does not match. Please check whether the manager and worker point to the same directory and have read and write permissions.
-- `xxx.xxx.xxx.xxx passed worker detection:` The detection is normal.
+  * **FrameSplit:** Split the animation sequence into multiple task packages (e.g., 15 frames per package) and send them to different Workers. Avoid setting this value too small, otherwise frequent task handovers will increase extra time consumption.
 
-## 4. Preferences Explanation
+#### D. Scene and Pass Precise Control
 
-- **HeartbeatInterval:** Set the heartbeat detection interval (in seconds).
-- **HeartbeatRetry:** Set the number of heartbeat detection retries.
+Click the expand button on the right side of the scene list to enable **Display extra**:
 
-## 5. Local Batch Rendering
+  * You can assign different **View Layers** or an **Active Camera** for a specific **Scene**.
+  * **Custom Scene:** Click the **triangle arrow to expand** below the scene list, select the corresponding scene, and then click the **Add** button to add a custom scene. This allows you to batch create rendering queues with different parameters in the same project.
 
-RenderWorkshop supports local batch rendering. Set the scene list parameters and click start rendering.
+#### E. Task Quality Control and File Management
 
-## 6. How to Set Worker Multi-Language
+To ensure rendering stability, RenderWorkshop has a complete quality control mechanism:
 
-Copy the language file you need to the same directory of the worker program and modify the name of `lang.json`. Restart the worker to take effect.
+1.  **Pre-render Check:** The system checks if the file location is accessible and ensures all computers are reading the exact same `.blend` file (via MD5 checksum validation).
+2.  **Heartbeat Detection:** Continuous heartbeat detection is performed on the Worker during rendering to prevent tasks from stalling if a Worker drops offline.
+3.  **Check and re-render missing frames:** After rendering is complete, it automatically scans and re-renders any missing frames or blocks.
+4.  **Custom Output Path:** Specify a custom export path. **Note: The custom export paths for both the Manager and Worker must point to the same directory**, and all nodes must have read and write permissions for this folder.
+
+-----
+
+## 🛠️ Troubleshooting
+
+If you see an error prompt in the Worker list, please refer to the following checklist:
+
+| Error Prompt (UI Info) | Meaning & Explanation | Solution |
+| :--- | :--- | :--- |
+| `can't get blend file` <br> `get local blend file error` | Worker cannot read the project file | 1. Check if the `.blend` file is placed in a shared folder accessible by all computers, and that all computers have read/write permissions to it.<br>2. Check if the file path contains illegal characters. |
+| `please save the blend file` | File is not saved in the shared space | Please make sure to save your `.blend` file into the network shared folder, **not a local folder**. |
+| `does not obtain the same file` <br> `flag file MD5 does not match` | File consistency check failed | The Manager and Worker are not reading the same file. Please ensure both point to the identical absolute path. |
+| `check code does not match` | Check code mismatch | If you set a Check Code, ensure the characters entered in both the Manager and Worker match exactly. |
+| `output path does not match or flag file losed` | Output path mismatch or flag file lost | There are permission issues with the `Custom Output Path`. Check if all nodes have read/write permissions to this folder, or try restarting the Server to rebuild the flag file. |
+| `check timeout` / `went offline` | Node disconnected or heartbeat detection timeout | Check the network connection of the Worker computer, or whether it disconnected due to sleep/hibernation. |
