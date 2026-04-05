@@ -114,13 +114,13 @@ export default function Intro() {
                 </Button>
               </Link>
             </div>{" "}
-            {/* Closing div for button container */}
+            
           </BlurFade>{" "}
-          {/* Closing BlurFade for button section */}
+          
         </div>{" "}
-        {/* Closing div for left column */}
+        
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          {/* Adjusted max-width for larger screens */}
+          
           <BlurFade
             className="w-full sm:w-3/4 md:max-w-md lg:max-w-lg"
             delay={0.12}

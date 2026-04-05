@@ -2,6 +2,7 @@ import path from "path";
 import matter from "gray-matter";
 import fs from "fs";
 import html from "remark-html";
+import remarkGfm from "remark-gfm";
 import { remark } from "remark";
 
 export async function getMarkdownContent(fileName: string) {
@@ -11,7 +12,10 @@ export async function getMarkdownContent(fileName: string) {
 
   const { data, content } = matter(fileContents);
 
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark()
+    .use(remarkGfm)
+    .use(html)
+    .process(content);
 
   const htmlContent = processedContent.toString();
 

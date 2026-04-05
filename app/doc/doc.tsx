@@ -1,17 +1,13 @@
 import { getMarkdownContent } from "../utils";
+import MarkdownWithTOC from "@/components/markdown-with-toc";
 
 export default async function Doc() {
   const { content, data } = await getMarkdownContent("document.md");
   console.log(data);
 
   return (
-    <>
-      <div className="flex flex-col justify-center items-center bg-white bg-opacity-70">
-        <div className="border rounded-lg shadow-md p-8 prose">
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </div>
-        
-      </div>
-    </>
+    <div className="w-full bg-white dark:bg-zinc-950 rounded-3xl p-6 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-zinc-100 dark:border-zinc-900">
+      <MarkdownWithTOC content={content} />
+    </div>
   );
 }

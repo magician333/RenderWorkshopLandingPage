@@ -87,12 +87,12 @@ export default function FAQ() {
             animation="blurIn"
             by="line"
             as="p"
-            // Responsive title size
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" // Added text-center
+            
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" 
           >
             RenderWorkshop FAQ
           </TextAnimate>
-          {/* Responsive width */}
+          
           <Accordion type="single" collapsible className="w-full md:w-2/3 lg:w-1/2">
             {faqData.map((item) => (
               <AccordionItem

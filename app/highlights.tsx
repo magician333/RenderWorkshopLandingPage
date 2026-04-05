@@ -91,12 +91,12 @@ export default function Highlights() {
       description:
         "Minimal resources consumption during standby, allowing workers to wake on demand.",
     },
-    // {
-    //   Icon: LanguagesIcon,
-    //   name: "Multi-Language Support",
-    //   description:
-    //     "Supports various languages with options for custom display settings.",
-    // },
+    
+    
+    
+    
+    
+    
   ];
 
   return (
@@ -105,22 +105,22 @@ export default function Highlights() {
         animation="blurIn"
         by="line"
         as="p"
-        // Responsive text size
+        
         className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center"
       >
         RenderWorkshop Features
       </TextAnimate>
-      {/* Mobile: Vertical list; SM+: Grid layout */}
-      <div className="flex flex-col space-y-4 w-full p-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0 lg:grid-cols-3 xl:grid-cols-5"> {/* Changed default to flex-col, space-y-4 */}
+      
+      <div className="flex flex-col space-y-4 w-full p-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0 lg:grid-cols-3 xl:grid-cols-5"> 
         {features.map((item) => (
           <div
             key={item.name}
-            // Mobile: List item style; SM+: Grid item style
-            className="shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] bg-white rounded-2xl w-full flex flex-row items-center p-4 sm:flex-col sm:justify-start sm:min-h-[16rem] sm:p-4" // Default: flex-row, items-center; SM: flex-col, justify-start, min-h, p-4
+            
+            className="shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] bg-white rounded-2xl w-full flex flex-row items-center p-4 sm:flex-col sm:justify-start sm:min-h-[16rem] sm:p-4" 
           >
-            <item.Icon className="w-10 h-10 flex-shrink-0 mr-4 sm:mr-0 sm:mb-2 sm:mt-4" /> {/* Adjusted margins for list/grid */}
-            <div className="flex flex-col text-left sm:text-center"> {/* Text container for list view */}
-              <p className="font-bold text-lg mb-1 sm:mb-2">{item.name}</p> {/* Adjusted margin */}
+            <item.Icon className="w-10 h-10 flex-shrink-0 mr-4 sm:mr-0 sm:mb-2 sm:mt-4" /> 
+            <div className="flex flex-col text-left sm:text-center"> 
+              <p className="font-bold text-lg mb-1 sm:mb-2">{item.name}</p> 
               <p className="text-sm tracking-tight text-wrap">
                 {item.description}
               </p>

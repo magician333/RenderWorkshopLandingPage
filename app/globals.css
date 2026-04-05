@@ -70,3 +70,22 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progress-1 {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+@keyframes progress-2 {
+  0% { width: 0; }
+  100% { width: 52%; }
+}
+@keyframes progress-10 {
+  0% { width: 0; }
+  100% { width: 11%; }
+}

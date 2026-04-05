@@ -47,8 +47,8 @@ export default function Buy() {
             animation="blurIn"
             by="line"
             as="p"
-            // Responsive title size
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" // Added text-center
+            
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" 
           >
             Where to Get it
           </TextAnimate>
@@ -58,7 +58,7 @@ export default function Buy() {
           {market.map((item) => (
             <div
               key={item.name}
-              // Removed fixed w/h, whitespace-nowrap. Added responsive width, padding, justify-between
+              
               className="shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] rounded-2xl p-6 md:p-10 w-full md:w-96 flex flex-col justify-between items-center text-center"
             >
               {/* Top section for image, price, status */}
@@ -68,7 +68,7 @@ export default function Buy() {
                   height={200}
                   src={`/platform/${item.icon}`}
                   alt="logo"
-                  className="mb-4 object-contain max-h-[60px] mx-auto" // Reduced margin, added max-h, centered image
+                  className="mb-4 object-contain max-h-[60px] mx-auto" 
                 />
                 <p className="font-semibold text-3xl md:text-4xl text-blender_orange mt-2">
                   {" "}
@@ -92,7 +92,7 @@ export default function Buy() {
 
               {/* Bottom section for button */}
               <Button
-                className="font-semibold bg-blender_orange w-full mt-auto" // Added w-full and mt-auto to push button down
+                className="font-semibold bg-blender_orange w-full mt-auto" 
                 disabled={item.url === "#" ? true : false}
               >
                 <a

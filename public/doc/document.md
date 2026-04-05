@@ -1,4 +1,4 @@
-# RenderWorkshop User Manual
+# User Manual
 
 Welcome to RenderWorkshop\! This is a distributed rendering system designed specifically for Blender. It allows you to connect multiple computers to jointly complete heavy image or animation rendering tasks, saving you a significant amount of time.
 
@@ -9,7 +9,7 @@ This tutorial is divided into a **"Quick Start Guide"** (for general users) and 
 
 -----
 
-## 🟢 Quick Start Guide (For General Users)
+## Quick Start Guide (For General Users)
 
 With just four simple stages, you can get multiple computers working for you simultaneously\!
 
@@ -53,7 +53,7 @@ With just four simple stages, you can get multiple computers working for you sim
 
 -----
 
-## 🔴 Advanced Configuration Guide (For Professional/Advanced Users)
+## Advanced Configuration Guide (For Professional/Advanced Users)
 
 To meet the needs of complex projects and varied network environments, RenderWorkshop provides rich custom parameters.
 
@@ -108,7 +108,7 @@ To ensure rendering stability, RenderWorkshop has a complete quality control mec
 
 -----
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 If you see an error prompt in the Worker list, please refer to the following checklist:
 

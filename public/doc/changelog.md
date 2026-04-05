@@ -2,7 +2,8 @@
 
 > From latest version to original version
 
-**0.39 2026.2.23**
+## 0.39 
+> 2026.2.23
 1. Added a system daemon feature to the worker, enabling it to start automatically on boot.
 2. Optimized the manager server's message queue, resolving severe delays in message parsing.
 3. Optimized the JSON file detection logic within the worker.
@@ -13,38 +14,42 @@
 8. Fixed a potential null pointer dereference when the worker cancels a task.
 ---
 
-**0.38 2026.2.8** Optimized_version
+## 0.38 
+> 2026.2.8 Optimized Version
 1. Rewrote local rendering logic to utilize sub-processes, resulting in a smoother user experience.
 2. Refactored and optimized the performance of the Manager-side server.
 3. Optimized the communication logic between the Manager and the Worker.
 4. Resolved a crash issue occurring when rendering a large number of files locally.
 ---
 
-**0.37 2025.12.21**
+## 0.37
+> 2025.12.21
 1. Added support for AOV rendering in Blender 5.0
 2. Added support for ACES 2.0
 3. Fixed the issue of AOV rendering format changing to PNG
 ---
 
-**0.36 2025.12.14** interim version
+## 0.36 
+> 2025.12.14 Interim Version
 1. Basic image and animation rendering functions are now compatible with Blender 5.0; AOV rendering will be compatible in the next version.
 2. Improved some text translations.
 ---
 
-**0.35 2025.5.30** Emergency fix version
+## 0.35 
+> 2025.5.30 Emergency fix Version
 1. Fixed the issue with convertblendfile function reporting an error,Thanks for @VM
 ---
    
-**0.34 2025.5.11** Optimized_version
-
+## 0.34 
+> 2025.5.11 Optimized Version
 1. Manager optimized the logic of receiving messages
 2. Manager optimized the path escape under different systems
 3. Fixed the bug of missing checkcode
 
 ---
 
-**0.33 2025.4.18** Optimized_version
-
+## 0.33
+> 2025.4.18 Optimized Version
 1. Added checksum automatic completion for worker Output Path
 2. Optimized the length display of the worker message list. The limit of only the last five pieces of information is removed under the normal mode, and the message list is adjusted to scrolling display (the initial display may be incorrect on computers with multiple resolutions and different scaling ratios at the same time. Manually adjust the worker window size to restore normal display)
 3. Optimized the worker operation logic, and no longer allowed to enter the settings page during rendering.
@@ -71,8 +76,8 @@
 
 ---
 
-**0.32 2025.4.11** Important version
-
+## 0.32
+> 2025.4.11 Important version
 1. Allow custom rendering storage directory
 2. Manager allows custom IP (Thanks to Spencer Scelfo's suggestions and testing)
 3. Worker allows custom network interface
@@ -89,8 +94,8 @@
 
 ---
 
-**0.31 2025.3.28** Optimized_version
-
+## 0.31
+> 2025.3.28 Optimized Version
 1. Worker adds real-time rendering status
 2. Worker adds display of Blender rendering errors
 3. Worker adds placeholder for blending
@@ -103,8 +108,8 @@
 
 ---
 
-**0.3 2025.3.21** Important version
-
+## 0.30
+> 2025.3.21 Important Version
 1. Network image rendering now supports sample subset rendering (where each worker performs a portion of the sampling, and the manager combines all parts to form the complete image, available only for scenes using Blender 4.4 and above with Cycles rendering engine, experimental!)
 2. Local image and animation rendering support for AOV (Arbitrary Output Variables, multi-layer, and multi-pass rendering).
 3. Network image and animation rendering support for AOV (only when the tile count is 1).
@@ -127,16 +132,16 @@
 
 ---
 
-**V0.27 2025.2.25**
-
+## 0.27
+> 2025.2.25
 1. local image render and local animation render support rendering multiple view layers
 2. support for switching scenes by clicking on the scene name in the scene list
 3. optimized the logic of merging images, fixed the problem of loading extra image nodes when generating multi-layer openEXR
 
 ---
 
-**V0.26 2025.1.26** Optimized_version
-
+## 0.26
+> 2025.1.26 Optimized Version
 1. Added multi-language support for the manager, which syncs with the language selected in Blender's preferences (currently supports English, Simplified Chinese, Traditional Chinese, German, and Japanese).
 2. Added language pack support for workers; place the lang.json file in the same directory as the worker application and restart the worker for the translation effect.
 3. Optimized the logic for obtaining the color space when loading image previews.
@@ -152,8 +157,8 @@
 
 ---
 
-**V0.25 2025.1.20**
-
+## 0.25
+> 2025.1.20
 1. Added local rendering mode, where workers will automatically copy the .blend file to the local machine before rendering and delete it after rendering is complete. This can effectively boost Blender's rendering speed and reduce network bandwidth usage, with better performance for large .blend files and low-bandwidth networks.
 2. Added the "Pull BlendFile" option in worker settings to enable local rendering mode, enabled by default.
 3. Added support for Windows ARM processors in workers.
@@ -165,8 +170,8 @@
 
 ---
 
-**V0.24 2025.1.14**
-
+## 0.24 
+> 2025.1.14
 1. Supports multi-channel and multi-layer exr rendering (experimental)
 2. After the animation rendering is completed, the check of the scene list will also be unchecked
 3. Fixed the error of missing starting frame when adding scenes in the animation
@@ -177,7 +182,8 @@
 
 ---
 
-**V0.23 2025.1.3** Optimized_version
+## 0.23 
+> 2025.1.3 Optimized Version
 
 1. Added ARM series chip support for MacOS
 2. Fixed the problem that the heartbeat detection recognition error caused the stop when rendering the image.
@@ -188,24 +194,24 @@
 
 ---
 
-**V0.22 2025.1.1** Important version
-
-1. **Added UPnP mechanism**: Workers and managers can now automatically connect within the same subnet without manual configuration of server IP and port.
-2. **New auto-detection for Blender executable path**: You can now press enter in the Blender Path setting to automatically complete the path.
-3. **Manager message list save feature**: We've introduced the ability to save the manager's message list.
-4. **Worker log save feature**: A new option to save logs has been added to the worker settings.
-5. **CommandLine Mode return**: If problems such as using the win10 default terminal cause display errors or if you want to keep system usage extremely low, you can switch to CommandLine Mode.
-6. **Enter key toggle for true/false in worker settings**: The enter key can now be used to switch between true and false values in the worker settings.
-7. **Fixed crashes due to missing or mismatched field types in config files**: The system will now automatically reset to default values for any missing fields or field type mismatches in the config files.
-8. **Resolved the issue where manager couldn't stop heartbeat checks when canceling tasks**.
-9. **Optimized worker code architecture**: Improvements have been made to the worker's underlying code structure.
-10. **Improved worker interface adaptive layout**: The worker interface now adapts more effectively to various screen layouts.
-11. **Enhanced hints and error messages in worker settings**: We've refined the hints and error messages in the worker settings for better clarity and understanding.
+## 0.22 
+> 2025.1.1 Important Version
+1. Added UPnP mechanism: Workers and managers can now automatically connect within the same subnet without manual configuration of server IP and port.
+2. New auto-detection for Blender executable path: You can now press enter in the Blender Path setting to automatically complete the path.
+3. Manager message list save feature: We've introduced the ability to save the manager's message list.
+4. Worker log save feature: A new option to save logs has been added to the worker settings.
+5. CommandLine Mode return: If problems such as using the win10 default terminal cause display errors or if you want to keep system usage extremely low, you can switch to CommandLine Mode.
+6. Enter key toggle for true/false in worker settings: The enter key can now be used to switch between true and false values in the worker settings.
+7. Fixed crashes due to missing or mismatched field types in config files: The system will now automatically reset to default values for any missing fields or field type mismatches in the config files.
+8. Resolved the issue where manager couldn't stop heartbeat checks when canceling tasks.
+9. Optimized worker code architecture: Improvements have been made to the worker's underlying code structure.
+10. Improved worker interface adaptive layout: The worker interface now adapts more effectively to various screen layouts.
+11. Enhanced hints and error messages in worker settings: We've refined the hints and error messages in the worker settings for better clarity and understanding.
 
 ---
 
-**V0.21 2024.12.25** Important version
-
+## 0.21 
+> 2024.12.25 Important version
 1. Rewritten the worker's detection method for configuration files. The first detection will automatically generate a default configuration file. Subsequent versions of workers do not come with config.json by default.
 2. Rewritten the command generation for worker rendering images and deleted render_border.py file, subsequent versions of workers do not come with render_border.py
 3. A new tab completion function has been added to the worker setting interface
@@ -219,8 +225,8 @@
 
 ---
 
-**V0.2 2024.12.20** Important version
-
+## 0.20 
+> 2024.12.20 Important Version
 1. The manager data will not be saved in the blend file, and the manager content of each scene will be consistent to avoid abnormal data status
 2. Added task end information broadcast
 3. Stop the server will also cancel the online task
@@ -235,23 +241,23 @@
 
 ---
 
-**V0.11 2024.12.11**
-
+## 0.11
+> 2024.12.11
 1. Support adding scenes by yourself in the scene list
 2. If there is no worker, local rendering will be automatically used
 
 ---
 
-**V0.091 2024.12.3** Optimized_version
-
+## 0.091 
+> 2024.12.3 Optimized Version
 1. The worker homepage supports displaying the default Cycles rendering device and GPU backend
 2. Optimized the worker check logic
 3. Optimized the manager to receive messages
 
 ---
 
-**V0.09 2024.12.2** Important version
-
+## 0.09 
+> 2024.12.2 Important Version
 1. Workers use TUI (text-based user interfaces) for better usability
 2. Added configuration detection function on the worker side
 3. Improved the automatic detection function in the worker list
@@ -259,7 +265,8 @@
 
 ---
 
-**V0.08 2024.11.21** Important version
+## 0.08
+> 2024.11.21 Important Version
 
 1. Supports the cancel rendering function
 2. Support automatic detection of blend file path
@@ -277,8 +284,8 @@
 
 ---
 
-**V0.07 2024.11.12**
-
+## 0.07 
+> 2024.11.12
 1. Now when rendering animation, the tasks of all scenes will be integrated into one task. There is no need to wait for the task of one scene to be completed before starting the next rendering, which is more efficient
 2. Remove the restrictions on compositing, and now rendering can enable compositing.
 3. The worker can now display the local IP
@@ -286,8 +293,8 @@
 
 ---
 
-**V0.06 2024.11.7** Important version
-
+## 0.06 
+> 2024.11.7 Important Version
 1. Supports heartbeat detection to ensure that tasks can still be assigned to other online workers even after the worker goes offline
 2. Support Cycles render both CPU+GPU
 3. Adjust worker inspection method
@@ -300,8 +307,8 @@
 
 ---
 
-**V0.04 2024.10.30**
-
+## 0.04 
+> 2024.10.30
 1. Info adds a new progress bar
 2. Rewrite the workerlist inspection process
 3. merge_image uses the copied new temporary scene and no longer takes up the original scene synthesis
@@ -310,8 +317,8 @@
 
 ---
 
-**V0.03 2024.10.28**
-
+## 0.03 
+> 2024.10.28
 1. Support automatic identification of Cycles Device and GPUBackend
 2. The worker is no longer allowed to accept additional data while it is running
 3. Add md5 check to blend file
@@ -319,9 +326,13 @@
 
 ---
 
-**V0.02 2024.10.24**
-
+## 0.02 
+> 2024.10.24
 1. Support merge image with AgX, Filmic, Filmic log and Khronos PBR Neutral look
 2. Support check workerlist
 3. Disable render setting when rendering
 4. Fix Cycles engine render bug
+
+## 0.01
+> 2024.10.8
+1. Complete basic functions

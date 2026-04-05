@@ -9,14 +9,13 @@ export default function Service() {
           animation="blurIn"
           by="line"
           as="p"
-          // Responsive title size
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" // Added text-center
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center"
         >
           Service Statement
         </TextAnimate>
-        {/* Added responsive width and centering to BlurFade */}
+
         <BlurFade delay={0.1} inView className="w-full ">
-          {/* Added responsive text size */}
+
           <p className="text-sm md:text-base">
             Your privacy is our priority. When using RenderWorkshop, please be
             assured that we do not collect any personal information. The
