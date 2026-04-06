@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -89,20 +91,19 @@ export default function Intro() {
           </TextAnimate>
           <BlurFade delay={0.1} inView>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6">
-              <Link
-                href="https://spellbinder6.gumroad.com/l/renderworkshop"
-                className="w-full sm:w-auto"
+
+              <Button
+                onClick={() => {
+                  document.getElementById("buy-section")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-blender_orange font-semibold w-full sm:w-auto shadow-none leading-none tracking-wide"
+                size="lg"
               >
-                <Button
-                  className="bg-blender_orange font-semibold w-full sm:w-auto shadow-none leading-none tracking-wide"
-                  size="lg"
-                >
-                  Get it at Gumroad
-                  <ChevronRight className="h-4 w-4 ml-1" />
-                </Button>
-              </Link>
+                Start Rendering Faster
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </Button>
               <Link
-                href="https://superhivemarket.com/products/renderworkshop"
+                href="/?page=manual"
                 className="w-full sm:w-auto"
               >
                 <Button
@@ -110,17 +111,17 @@ export default function Intro() {
                   variant="outline"
                   size="lg"
                 >
-                  Get it at BlenderMarket
+                  How to use it
                 </Button>
               </Link>
             </div>{" "}
-            
+
           </BlurFade>{" "}
-          
+
         </div>{" "}
-        
+
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          
+
           <BlurFade
             className="w-full sm:w-3/4 md:max-w-md lg:max-w-lg"
             delay={0.12}

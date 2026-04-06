@@ -1,115 +1,172 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { TextAnimate } from "@/components/ui/text-animate";
-import { BadgeCheck } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { CheckCircle2, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Buy() {
+
   const market = [
     {
       name: "Gumroad",
       url: "https://spellbinder6.gumroad.com/l/renderworkshop",
       price: "$49.99",
-      service: "Long-term support",
-      update_fee: "Free",
-      func: "All features",
-      status: "In sale",
+      status: "One-time payment",
       icon: "gumroad.png",
-      recommend: false,
+      recommend: true,
+      features: [
+        "Lifetime license & updates",
+        "Access to all advanced features",
+        "Secure payment via Gumroad",
+      ],
+      buttonText: "Buy on Gumroad",
     },
     {
       name: "BlenderMarket",
       url: "https://blendermarket.com/products/renderworkshop",
       price: "$49.99",
-      service: "Long-term support",
-      update_fee: "Free",
-      func: "All features",
-      status: "In sale",
+      status: "One-time payment",
       icon: "blendermarket.png",
       recommend: true,
+      features: [
+        "Lifetime license & updates",
+        "Access to all advanced features",
+        "Contributes to Blender Dev Fund",
+        "BlenderMarket Guarantee",
+      ],
+      buttonText: "Buy on BlenderMarket",
     },
-        {
+    {
       name: "BiliBili工房",
       url: "https://mall.bilibili.com/neul-next/detailuniversal/detail.html?isMerchant=1&page=detailuniversal_detail&saleType=10&itemsId=12438818&loadingShow=1&noTitleBar=1&msource=merchant_shar",
       price: "￥300",
-      service: "长期支持",
-      update_fee: "免费",
-      func: "全功能",
-      status: "在售",
+      status: "买断制",
       icon: "bilibili.png",
-      recommend: true,
+      recommend: false,
+      features: [
+        "永久授权 & 免费版本更新",
+        "包含所有高级功能",
+        "B站工坊官方交易担保",
+      ],
+      buttonText: "前往B站工坊购买",
     },
   ];
+
   return (
-    <>
-      <div className="flex flex-col justify-center items-center">
-        <div>
+    <div id="buy-section" className="flex flex-col justify-center items-center py-20 px-4 sm:px-6 overflow-hidden w-full">
+
+
+      <BlurFade inView>
+        <div className="text-center space-y-4 mb-16">
           <TextAnimate
-            animation="blurIn"
-            by="line"
-            as="p"
-            
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-wider text-center" 
+            animation="blurInUp"
+            by="word"
+            as="h2"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter"
           >
-            Where to Get it
+            Ready to Supercharge Your Rendering?
           </TextAnimate>
+          <p className="text-muted-foreground max-w-2xl mx-auto md:text-lg">
+            Choose your preferred platform to get RenderWorkshop. One-time purchase, lifetime updates, zero hidden fees.
+          </p>
         </div>
-        {/* Changed flex layout: col on small, row on medium+, adjusted gap/alignment/margin */}
-        <div className="flex flex-col md:flex-row w-full justify-center items-stretch md:items-start gap-8 md:gap-12 mt-8">
-          {market.map((item) => (
+      </BlurFade>
+
+
+      <div className="flex flex-col lg:flex-row w-full max-w-7xl justify-center items-stretch gap-8">
+        {market.map((item, index) => (
+          <BlurFade
+            key={item.name}
+            delay={index * 0.1}
+            className="flex w-full lg:w-1/3"
+          >
             <div
-              key={item.name}
-              
-              className="shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] rounded-2xl p-6 md:p-10 w-full md:w-96 flex flex-col justify-between items-center text-center"
+              className={cn(
+                "relative flex flex-col w-full rounded-[2rem] p-8 sm:p-10 transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-zinc-900",
+                item.recommend
+                  ? "border-2 border-orange-500/50 shadow-[0_0_40px_-10px_rgba(249,115,22,0.2)] dark:shadow-[0_0_40px_-10px_rgba(249,115,22,0.1)]"
+                  : "border border-zinc-200 dark:border-zinc-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+              )}
             >
-              {/* Top section for image, price, status */}
-              <div>
-                <Image
-                  width={300}
-                  height={200}
-                  src={`/platform/${item.icon}`}
-                  alt="logo"
-                  className="mb-4 object-contain max-h-[60px] mx-auto" 
-                />
-                <p className="font-semibold text-3xl md:text-4xl text-blender_orange mt-2">
-                  {" "}
-                  {/* Responsive price size */}
-                  {item.price}
-                </p>
-                <p className="font-medium text-sm text-blender_blue">
+
+              {item.recommend && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-1 rounded-b-xl text-xs font-bold tracking-widest uppercase shadow-md flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" />
+                  Recommended
+                </div>
+              )}
+
+
+              <div className="flex flex-col items-center border-b border-zinc-100 dark:border-zinc-800 pb-8 mt-2">
+                <div className="h-16 flex items-center justify-center mb-6">
+                  <Image
+                    width={200}
+                    height={80}
+                    src={`/platform/${item.icon}`}
+                    alt={`${item.name} logo`}
+                    className="object-contain max-h-[50px] mx-auto drop-shadow-sm dark:brightness-110"
+                  />
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-bold text-4xl sm:text-5xl text-zinc-900 dark:text-zinc-50 tracking-tight">
+                    {item.price}
+                  </span>
+                </div>
+                <span className="text-sm font-medium text-orange-500 mt-2 bg-orange-50 dark:bg-orange-500/10 px-3 py-1 rounded-full">
                   {item.status}
-                </p>
+                </span>
               </div>
 
-              {/* Middle section for features */}
-              {/* Reduced bottom margin, added text-sm */}
-              <div className="flex flex-col justify-center my-6 text-sm space-y-1">
-                {" "}
-                {/* Changed mb/mt to my, added space-y */}
-                <p className="font-semibold">Contains features: {item.func}</p>
-                <p className="font-semibold">Service: {item.service}</p>
-                <p className="font-semibold">Update fee: {item.update_fee}</p>
-              </div>
 
-              {/* Bottom section for button */}
-              <Button
-                className="font-semibold bg-blender_orange w-full mt-auto" 
-                disabled={item.url === "#" ? true : false}
-              >
-                <a
-                  href={item.url}
-                  className="flex items-center justify-center w-full"
+              <ul className="flex-1 flex flex-col gap-4 py-8">
+                {item.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                    <span className="text-zinc-600 dark:text-zinc-300 text-sm font-medium leading-relaxed">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+
+              <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
+                <Button
+                  size="lg"
+                  disabled={item.url === "#"}
+                  className={cn(
+                    "w-full h-14 rounded-xl font-bold text-base transition-all duration-300",
+                    item.recommend
+                      ? "bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40"
+                      : "bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white dark:text-zinc-900"
+                  )}
                 >
-                  {" "}
-                  {/* Ensure link fills button */}
-                  Get it
-                  <BadgeCheck className="size-5 ml-2" />{" "}
-                  {/* Reduced size, adjusted margin */}
-                </a>
-              </Button>
+                  {item.buttonText}
+                </Button>
+              </a>
             </div>
-          ))}
-        </div>
+          </BlurFade>
+        ))}
       </div>
-    </>
+
+
+      <BlurFade inView delay={0.4}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mt-16 text-muted-foreground text-sm font-medium">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-green-500" />
+            <span>Secure & Encrypted Checkout</span>
+          </div>
+          <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
+          <div className="flex items-center gap-2">
+            <Zap className="w-5 h-5 text-orange-500" />
+            <span>Instant Access After Purchase</span>
+          </div>
+        </div>
+      </BlurFade>
+
+    </div>
   );
 }

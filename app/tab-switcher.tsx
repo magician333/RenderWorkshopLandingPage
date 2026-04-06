@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ReactNode } from "react";
 
@@ -12,13 +12,22 @@ interface TabSwitcherProps {
 }
 
 export default function TabSwitcher({
-    defaultTab,
     homeContent,
     docContent,
     changelogContent,
 }: TabSwitcherProps) {
     const router = useRouter();
     const pathname = usePathname();
+    const searchParams = useSearchParams(); 
+
+    
+    const pageParam = searchParams.get("page");
+    let activeTab = "home";
+    if (pageParam === "manual") {
+        activeTab = "document";
+    } else if (pageParam === "changelog") {
+        activeTab = "changelog";
+    }
 
     const handleValueChange = (value: string) => {
         const params = new URLSearchParams();
@@ -32,11 +41,13 @@ export default function TabSwitcher({
         const queryString = params.toString();
         const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
 
-        router.push(newUrl, { scroll: false });
+        
+        router.push(newUrl, { scroll: true });
     };
 
     return (
-        <Tabs defaultValue={defaultTab} onValueChange={handleValueChange} className="z-10 w-full">
+        
+        <Tabs value={activeTab} onValueChange={handleValueChange} className="z-10 w-full">
             <TabsList className="overflow-x-auto">
                 <TabsTrigger value="home" className="tracking-wide">
                     Home
